@@ -40,11 +40,10 @@ public class TerrainController {
         return terrainService.calculateTax(terrainId);
     }
 
-    /*@GetMapping("/{terrainId}/is-tax-paid")
+    @GetMapping("/{terrainId}/is-tax-paid")
     public boolean isTaxPaidForYear(@PathVariable Long terrainId, @RequestParam int year) {
         return terrainService.isTaxPaidForYear(terrainId, year);
-    }*/
+    }
 
-    // Additional endpoints for CRUD operations and other functionalities
 }
 
