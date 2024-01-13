@@ -9,14 +9,14 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Entity
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @PrimaryKeyJoinColumn(name = "user_id")
 
-public class Redevable extends User{
+public class Redevable{
 
 
     private String cin;
@@ -31,13 +31,7 @@ public class Redevable extends User{
 
 
 
-    public Redevable(String username, String email, String password, String cin, String nom, String prenom, String adresse) {
-        super(username, email, password);
-        this.cin = cin;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.adresse = adresse;
-    }
+
 
 
 }

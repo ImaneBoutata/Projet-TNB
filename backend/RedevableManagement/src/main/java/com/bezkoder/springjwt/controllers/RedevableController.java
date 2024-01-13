@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+/*@RestController
 @RequestMapping("/redevable")
 public class RedevableController {
     private final RedevableImpl redevableService;
@@ -49,4 +49,4 @@ public class RedevableController {
 
     // Additional endpoints for CRUD operations and other functionalities
 }
-
+*/

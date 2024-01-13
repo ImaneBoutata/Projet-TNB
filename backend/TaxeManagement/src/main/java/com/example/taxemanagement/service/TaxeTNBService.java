@@ -31,7 +31,7 @@ public class TaxeTNBService {
 
     public TaxeTNB saveTax(TaxeTNB taxeTNB) {
         Long idTerrain = taxeTNB.getTerrain().getTerrainID();
-            System.out.println("le terrain estttttttt ::::::::::"+ idTerrain);
+        System.out.println("le terrain estttttttt ::::::::::"+ idTerrain);
 
         Terrain terrain= restTemplate.getForObject("http://localhost:8888/TERRAIN-MANAGEMENT/terrain/"+ idTerrain, Terrain.class);
         if (terrain == null) {
@@ -61,4 +61,3 @@ public class TaxeTNBService {
         return taxeTNBRepository.findByTerrainAndAnnee(terrain, annee);
     }
 }
-

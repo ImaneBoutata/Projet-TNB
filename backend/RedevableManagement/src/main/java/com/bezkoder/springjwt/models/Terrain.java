@@ -29,7 +29,7 @@ public class Terrain {
 
     @ManyToOne
     @JoinColumn(name = "proprietaire_cin")
-    private Redevable proprietaire;
+    private User proprietaire;
 
     @OneToMany(mappedBy = "terrain", cascade = CascadeType.ALL)
     private List<TaxeTNB> taxesTNB;

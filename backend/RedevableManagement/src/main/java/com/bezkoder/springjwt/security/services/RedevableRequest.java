@@ -1,5 +1,5 @@
 package com.bezkoder.springjwt.security.services;
-
+/*
 
 import com.bezkoder.springjwt.models.Redevable;
 import lombok.AllArgsConstructor;
@@ -13,3 +13,4 @@ public class RedevableRequest {
 
     private Redevable redevable;
 }
+*/

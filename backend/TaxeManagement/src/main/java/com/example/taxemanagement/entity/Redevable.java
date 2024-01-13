@@ -1,5 +1,5 @@
 package com.example.taxemanagement.entity;
-
+/*
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -30,4 +30,4 @@ public class Redevable {
     private List<Terrain> terrains;
 
     // Getters and setters
-}
+}*/
