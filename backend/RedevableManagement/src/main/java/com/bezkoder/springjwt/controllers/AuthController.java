@@ -6,6 +6,8 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+
+
 import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,14 +60,14 @@ public class AuthController {
     SecurityContextHolder.getContext().setAuthentication(authentication);
     String jwt = jwtUtils.generateJwtToken(authentication);
     
-    UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();    
+    UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
     List<String> roles = userDetails.getAuthorities().stream()
         .map(item -> item.getAuthority())
         .collect(Collectors.toList());
 
     return ResponseEntity.ok(new JwtResponse(jwt, 
                          userDetails.getId(), 
-                         userDetails.getUsername(), 
+                         userDetails.getUsername(),
                          userDetails.getEmail(), 
                          roles));
   }
@@ -85,9 +87,16 @@ public class AuthController {
     }
 
     // Create new user's account
-    User user = new User(signUpRequest.getUsername(), 
-               signUpRequest.getEmail(),
-               encoder.encode(signUpRequest.getPassword()));
+    User user = new User(
+            signUpRequest.getUsername(),
+            signUpRequest.getEmail(),
+            encoder.encode(signUpRequest.getPassword()),
+            signUpRequest.getCin(),
+            signUpRequest.getNom(),
+            signUpRequest.getPrenom(),
+            signUpRequest.getAdresse()
+    );
+
 
     Set<String> strRoles = signUpRequest.getRole();
     Set<Role> roles = new HashSet<>();
@@ -142,7 +151,7 @@ public class AuthController {
   @PutMapping("/update/{id}")
   //@PreAuthorize("hasRole('ADMIN')") // Add appropriate authorization based on your requirements
   public ResponseEntity<?> updateUser(@PathVariable Long id,  @RequestBody SignupRequest updateUserRequest) {
-    Optional<User> userData = userRepository.findById(id);
+    Optional<User> userData =userRepository.findById(id);
     System.out.println("i am here !!!!!!!!!!!");
 
     if (userData.isPresent()) {

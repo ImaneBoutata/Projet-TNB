@@ -24,7 +24,7 @@ public class TaxeTNB {
     private int annee;
     private double montantPaye;
 
-    @JsonIgnore
+
     @ManyToOne
     //@JoinColumn(name = "terrain_id")
     private Terrain terrain;

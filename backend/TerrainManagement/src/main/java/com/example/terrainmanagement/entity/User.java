@@ -1,14 +1,14 @@
-package com.bezkoder.springjwt.models;
-
-import java.util.HashSet;
-import java.util.Set;
+package com.example.terrainmanagement.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "users", 
@@ -33,6 +33,7 @@ public class User {
   @NotBlank
   @Size(max = 120)
   private String password;
+
   @NotBlank
   private String cin;
   @NotBlank
@@ -55,15 +56,10 @@ public class User {
   public User() {
   }
 
-  public User(String username, String email, String encode, String cin, String nom, String prenom, String adresse) {
-    this.username=username;
-    this.email=email;
-    this.password=encode;
-    this.cin=cin;
-    this.nom=nom;
-    this.prenom=prenom;
-    this.adresse=adresse;
-
+  public User(String username, String email, String password) {
+    this.username = username;
+    this.email = email;
+    this.password = password;
   }
 
   public String getCin() {
@@ -104,12 +100,6 @@ public class User {
 
   public void setTerrains(List<Terrain> terrains) {
     this.terrains = terrains;
-  }
-
-  public User(String username, String email, String password) {
-    this.username = username;
-    this.email = email;
-    this.password = password;
   }
 
   public Long getId() {

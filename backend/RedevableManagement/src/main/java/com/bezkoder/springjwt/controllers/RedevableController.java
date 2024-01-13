@@ -2,7 +2,7 @@ package com.bezkoder.springjwt.controllers;
 
 
 
-import com.bezkoder.springjwt.models.Redevable;
+/*import com.bezkoder.springjwt.models.Redevable;
 import com.bezkoder.springjwt.models.Terrain;
 import com.bezkoder.springjwt.security.services.RedevableImpl;
 import com.bezkoder.springjwt.security.services.RedevableRequest;
@@ -49,4 +49,4 @@ public class RedevableController {
 
     // Additional endpoints for CRUD operations and other functionalities
 }
-
+*/

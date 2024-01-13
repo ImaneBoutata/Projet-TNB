@@ -30,17 +30,12 @@ public class TaxeTNBService {
     }
 
     public TaxeTNB saveTax(TaxeTNB taxeTNB) {
-        if(taxeTNB.getTerrain() == null){
-            System.out.println("le terrain est null !!!!!!!!!!!!!!!!!");
-        }
-        Terrain terrain= restTemplate.getForObject("http://localhost:8888/TERRAIN-MANAGEMENT/terrain/"+taxeTNB.getTerrain().getTerrainID(), Terrain.class);
-        if (terrain == null) {
-            // Handle the case where the Terrain is not found
-            System.out.println("Terrain not found for ID: " + taxeTNB.getTerrain().getTerrainID());
-        }
-        validateTerrainExistence(terrain.getTerrainID());
-        taxeTNB.setTerrain(terrain);
-        return taxeTNBRepository.save(taxeTNB);
+        Long terrainId = taxeTNB.getTerrain().getTerrainID();
+
+        this.taxeTNBRepository.save(taxeTNB);
+
+
+        return taxeTNB;
     }
 
     public List<TaxeTNB> getHistoricalTaxesForTerrain(Long terrainId) {
