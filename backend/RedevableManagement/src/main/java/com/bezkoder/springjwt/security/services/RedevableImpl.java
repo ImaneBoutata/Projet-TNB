@@ -1,7 +1,7 @@
 package com.bezkoder.springjwt.security.services;
 
 
-/*import com.bezkoder.springjwt.models.Redevable;
+import com.bezkoder.springjwt.models.Redevable;
 import com.bezkoder.springjwt.models.Terrain;
 import com.bezkoder.springjwt.repository.RedevableRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -58,4 +58,4 @@ public class RedevableImpl {
 
     // Additional methods for CRUD operations and historical taxes
 }
-*/
+
