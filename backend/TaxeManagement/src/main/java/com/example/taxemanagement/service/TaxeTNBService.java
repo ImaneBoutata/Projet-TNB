@@ -41,6 +41,7 @@ public class TaxeTNBService {
         validateTerrainExistence(terrain.getTerrainID());
         taxeTNB.setTerrain(terrain);
         return taxeTNBRepository.save(taxeTNB);
+
     }
 
     public List<TaxeTNB> getHistoricalTaxesForTerrain(Long terrainId) {
