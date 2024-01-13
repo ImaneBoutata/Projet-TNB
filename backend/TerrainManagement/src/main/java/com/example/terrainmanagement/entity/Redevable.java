@@ -18,8 +18,11 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Redevable {
-    @Id
+
+
+
+public class Redevable  extends User{
+
     private String cin;
     private String nom;
     private String prenom;

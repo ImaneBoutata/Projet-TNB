@@ -26,9 +26,8 @@ public class TaxeTNB {
 
 
     @ManyToOne
-    @JoinColumn(name = "terrain_id")
+    //@JoinColumn(name = "terrain_id")
     private Terrain terrain;
-
     // Getters and setters
 }
 
