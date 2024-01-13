@@ -2,6 +2,7 @@ package com.example.terrainmanagement.service;
 
 import com.example.terrainmanagement.entity.Categorie;
 import com.example.terrainmanagement.entity.Redevable;
+import com.example.terrainmanagement.entity.TaxeTNB;
 import com.example.terrainmanagement.entity.Terrain;
 import com.example.terrainmanagement.repository.CategorieRepository;
 import com.example.terrainmanagement.repository.TerrainRepository;
@@ -70,14 +71,19 @@ public class TerrainService {
         return terrain.get().getSurface() * categorie.getTaux();  // Placeholder, replace with actual calculation
     }
 
-   /* public boolean isTaxPaidForYear(Long terrainId, int year) {
+    public boolean isTaxPaidForYear(Long terrainId, int year) {
         // Implement logic to check if the tax for the specified year is paid
         Terrain terrain = terrainRepository.findById(terrainId)
                 .orElseThrow(()-> new EntityNotFoundException("terrain with ID " + terrainId + " not found"));
-        TaxeTNB taxRecords = taxeTNBService.findByTerrainAndAnnee(terrain,year);
+        // Use RestTemplate to call the other microservice's API
+        String apiUrl = "http://TAXE-MANAGEMENT/taxe-tnb/findByTerrainAndAnnee/{annee}";
+
+        TaxeTNB taxRecords = restTemplate.getForObject(apiUrl, TaxeTNB.class, terrain, year);
+
+        //  TaxeTNB taxRecords = taxeTNBService.findByTerrainAndAnnee(terrain,year);
         if(taxRecords == null) {return false;} else {return true;}
     }
-*/
+
     // Additional methods for CRUD operations and other functionalities
 }
 
