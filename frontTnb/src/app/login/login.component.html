@@ -1,0 +1,79 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 text-center text-md-start d-flex flex-column justify-content-center">
+
+      <h1 class="display-3 fw-bold ls-tight px-3">
+        The best offer <br />
+        <span class="text-primary">for your business</span>
+      </h1>
+
+      <p class="px-3" style="color: hsl(217, 10%, 50.8%)">
+        MedSupplyFinder streamlines the process of sourcing medical supplies, saving clients valuable time and effort. Our platform connects clients with the right suppliers, eliminating the need for extensive research and negotiations.
+      </p>
+
+    </div>
+    <div class="col-md-6">
+
+
+        <div class="card my-5">
+          <div class="card-body p-5">
+            <form (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+
+              <div class="mb-4">
+                <label for="form2Example1" class="form-label">Username</label>
+                <input type="text" class="form-control" id="form2Example1" name="username" [(ngModel)]="form.username" required />
+                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && f.controls['username'].hasError('required')">
+                  Username is required!
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label for="form2Example2" class="form-label">Password</label>
+                <input type="password" class="form-control" id="form2Example2" name="password" [(ngModel)]="form.password" required minlength="6" />
+                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && f.controls['password'].hasError('required')">
+                  Password is required
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="f.submitted && f.controls['password'].hasError('minlength')">
+                  Password must be at least 6 characters
+                </div>
+              </div>
+
+              <div class="mb-4 row">
+                <div class="col d-flex justify-content-center">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="form2Example3" checked />
+                    <label class="form-check-label" for="form2Example3">Remember me</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <a href='#!'>Forgot password?</a>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary mb-4" [disabled]="f.form.invalid">
+                <span *ngIf="isLoginFailed" class="spinner-border spinner-border-sm"></span>
+                Sign in
+              </button>
+
+              <div class="form-group">
+                <div class="alert alert-danger" role="alert" *ngIf="isLoginFailed">
+                  Login failed: {{ errorMessage }}
+                </div>
+              </div>
+
+              <div class="text-center">
+                <p>Not a member? <a href='/register'>Register</a></p>
+                <p>User? <a href='/user'>User</a></p>
+              </div>
+
+
+            </form>
+          </div>
+
+        <div class="alert alert-success" *ngIf="isLoggedIn">
+          Logged in as {{ roles }}.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

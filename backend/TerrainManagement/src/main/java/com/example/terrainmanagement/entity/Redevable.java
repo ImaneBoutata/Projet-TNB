@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
-/*@Transactional
+@Transactional
 @Entity
 @Getter
 @Setter
@@ -21,7 +21,7 @@ import java.util.List;
 
 
 
-/*public class Redevable  extends User{
+public class Redevable  extends User{
 
     private String cin;
     private String nom;
@@ -33,4 +33,4 @@ import java.util.List;
     private List<Terrain> terrains;
 
     // Getters and setters
-}*/
+}
