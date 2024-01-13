@@ -30,10 +30,10 @@ public class TaxeTNBService {
     }
 
     public TaxeTNB saveTax(TaxeTNB taxeTNB) {
-        if(taxeTNB.getTerrain() == null){
-            System.out.println("le terrain est null !!!!!!!!!!!!!!!!!");
-        }
-        Terrain terrain= restTemplate.getForObject("http://localhost:8888/TERRAIN-MANAGEMENT/terrain/"+taxeTNB.getTerrain().getTerrainID(), Terrain.class);
+        Long idTerrain = taxeTNB.getTerrain().getTerrainID();
+            System.out.println("le terrain estttttttt ::::::::::"+ idTerrain);
+
+        Terrain terrain= restTemplate.getForObject("http://localhost:8888/TERRAIN-MANAGEMENT/terrain/"+ idTerrain, Terrain.class);
         if (terrain == null) {
             // Handle the case where the Terrain is not found
             System.out.println("Terrain not found for ID: " + taxeTNB.getTerrain().getTerrainID());

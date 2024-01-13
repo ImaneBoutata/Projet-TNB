@@ -14,7 +14,6 @@ public class TaxeManagementApplication {
         SpringApplication.run(TaxeManagementApplication.class, args);
     }
     @Bean
-    @LoadBalanced
     public RestTemplate restTemplate(){
         return new RestTemplate();
     }

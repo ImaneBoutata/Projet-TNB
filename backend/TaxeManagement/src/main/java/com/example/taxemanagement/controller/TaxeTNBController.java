@@ -16,7 +16,6 @@ public class TaxeTNBController {
     @Autowired
     private TaxeTNBService taxeTNBService;
 
-
     @GetMapping("/all")
     public List<TaxeTNB> getAllTaxes() {
         return taxeTNBService.getAllTaxes();
@@ -24,6 +23,7 @@ public class TaxeTNBController {
 
     @PostMapping("/save")
     public TaxeTNB saveTax(@RequestBody TaxeTNB taxeTNB) {
+        //TaxeTNB taxeTNB = request.getTaxeTNB();
         return taxeTNBService.saveTax(taxeTNB);
     }
 
