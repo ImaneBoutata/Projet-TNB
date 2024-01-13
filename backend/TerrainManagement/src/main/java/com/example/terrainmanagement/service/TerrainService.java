@@ -20,8 +20,7 @@ import java.util.Optional;
 public class TerrainService {
     @Autowired
     private RestTemplate restTemplate;
-   // @Autowired
-   // private TaxeTNBService taxeTNBService;
+
 
     @Autowired
     private CategorieService categorieService;
@@ -43,8 +42,7 @@ public class TerrainService {
             return "surface can not be negative ";
         } else {
             try {
-                Redevable redevable = restTemplate.getForObject("http://REDEVABLE-SERVICE/redevable/" + terrain.getProprietaire().getCin(), Redevable.class);
-               // Categorie categorie = restTemplate.getForObject("http://CATEGORIE-TERRAIN-MICROSERVICE/categorie/nom/" + terrain.getCategorie().getNomCategorie(), Categorie.class);
+                Redevable redevable = restTemplate.getForObject("http://localhost:8888/REDEVABLE-SERVICE/redevable/" + terrain.getProprietaire().getCin(), Redevable.class);
                 Categorie categorie= categorieService.findByNomCategorie(terrain.getCategorie().getNomCategorie());
                 terrain.setProprietaire(redevable);
                 terrain.setCategorie(categorie);
@@ -66,7 +64,6 @@ public class TerrainService {
     public double calculateTax(Long terrainId) {
         // Implement logic to calculate tax based on terrainId
         Optional<Terrain> terrain = terrainRepository.findById(terrainId);
-        //Categorie categorie = restTemplate.getForObject("http://CATEGORIE-TERRAIN-MICROSERVICE/categorie/nom/" + terrain.get().getCategorie().getNomCategorie(), CategorieTerrain.class);
         Categorie categorie= categorieService.findByNomCategorie(terrain.get().getCategorie().getNomCategorie());
         return terrain.get().getSurface() * categorie.getTaux();  // Placeholder, replace with actual calculation
     }
@@ -76,11 +73,10 @@ public class TerrainService {
         Terrain terrain = terrainRepository.findById(terrainId)
                 .orElseThrow(()-> new EntityNotFoundException("terrain with ID " + terrainId + " not found"));
         // Use RestTemplate to call the other microservice's API
-        String apiUrl = "http://TAXE-MANAGEMENT/taxe-tnb/findByTerrainAndAnnee/{annee}";
+        String apiUrl = "http://localhost:8888/TAXE-MANAGEMENT/taxe-tnb/findByTerrainAndAnnee/{annee}";
 
         TaxeTNB taxRecords = restTemplate.getForObject(apiUrl, TaxeTNB.class, terrain, year);
 
-        //  TaxeTNB taxRecords = taxeTNBService.findByTerrainAndAnnee(terrain,year);
         if(taxRecords == null) {return false;} else {return true;}
     }
 

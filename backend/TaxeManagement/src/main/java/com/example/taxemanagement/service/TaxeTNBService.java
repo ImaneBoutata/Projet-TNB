@@ -5,6 +5,7 @@ import com.example.taxemanagement.entity.TaxeTNB;
 import com.example.taxemanagement.entity.Terrain;
 import com.example.taxemanagement.repository.TaxeTNBRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -19,8 +20,7 @@ public class TaxeTNBService {
 
     @Autowired
     private RestTemplate restTemplate;
-  //  @Autowired
-    //private TerrainService terrainService;
+
 
     @Autowired
     private TaxeTNBRepository taxeTNBRepository;
@@ -30,14 +30,17 @@ public class TaxeTNBService {
     }
 
     public TaxeTNB saveTax(TaxeTNB taxeTNB) {
-        // Additional logic for saving a tax
-        Terrain terrain= restTemplate.getForObject("http://TERRAIN-MANAGEMENT/terrain/"+taxeTNB.getTerrain().getTerrainID(), Terrain.class);
-        //Terrain terrain = terrainService.getTerrainById(taxeTNB.getTerrain().getTerrainID());
+        if(taxeTNB.getTerrain() == null){
+            System.out.println("le terrain est null !!!!!!!!!!!!!!!!!");
+        }
+        Terrain terrain= restTemplate.getForObject("http://localhost:8888/TERRAIN-MANAGEMENT/terrain/"+taxeTNB.getTerrain().getTerrainID(), Terrain.class);
+        if (terrain == null) {
+            // Handle the case where the Terrain is not found
+            System.out.println("Terrain not found for ID: " + taxeTNB.getTerrain().getTerrainID());
+        }
         validateTerrainExistence(terrain.getTerrainID());
-
         taxeTNB.setTerrain(terrain);
         return taxeTNBRepository.save(taxeTNB);
-
     }
 
     public List<TaxeTNB> getHistoricalTaxesForTerrain(Long terrainId) {
@@ -48,7 +51,7 @@ public class TaxeTNBService {
     // Additional methods for CRUD operations and other functionalities
 
     private void validateTerrainExistence(Long terrainId) {
-        Terrain terrain= restTemplate.getForObject("http://TERRAIN-MANAGEMENT/terrain/"+terrainId, Terrain.class);
+        Terrain terrain= restTemplate.getForObject("http://localhost:8888/TERRAIN-MANAGEMENT/terrain/"+terrainId, Terrain.class);
         //Terrain terrainById = terrainService.getTerrainById(terrainId);
         if(terrain==null){throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Terrain with ID " + terrainId + " not found.");}
     }

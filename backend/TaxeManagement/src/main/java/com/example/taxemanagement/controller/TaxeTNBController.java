@@ -23,8 +23,7 @@ public class TaxeTNBController {
     }
 
     @PostMapping("/save")
-    public TaxeTNB saveTax(@RequestBody TaxeRequest request) {
-        TaxeTNB taxeTNB = request.getTaxeTNB();
+    public TaxeTNB saveTax(@RequestBody TaxeTNB taxeTNB) {
         return taxeTNBService.saveTax(taxeTNB);
     }
 
