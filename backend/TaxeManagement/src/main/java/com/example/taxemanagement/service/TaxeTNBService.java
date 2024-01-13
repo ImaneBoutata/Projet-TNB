@@ -30,6 +30,10 @@ public class TaxeTNBService {
     }
 
     public TaxeTNB saveTax(TaxeTNB taxeTNB) {
+
+
+     System.out.println(taxeTNB.getSurface()+"teraaaaaaaaaaaaaaaaaaain nuuulllll");
+
         // Additional logic for saving a tax
         Terrain terrain= restTemplate.getForObject("http://TERRAIN-MANAGEMENT/terrain/"+taxeTNB.getTerrain().getTerrainID(), Terrain.class);
         //Terrain terrain = terrainService.getTerrainById(taxeTNB.getTerrain().getTerrainID());

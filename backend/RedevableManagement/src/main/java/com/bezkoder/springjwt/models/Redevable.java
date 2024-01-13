@@ -28,4 +28,16 @@ public class Redevable extends User{
     @OneToMany(mappedBy = "proprietaire", cascade = CascadeType.ALL)
     private List<Terrain> terrains;
 
+
+
+
+    public Redevable(String username, String email, String password, String cin, String nom, String prenom, String adresse) {
+        super(username, email, password);
+        this.cin = cin;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+    }
+
+
 }
