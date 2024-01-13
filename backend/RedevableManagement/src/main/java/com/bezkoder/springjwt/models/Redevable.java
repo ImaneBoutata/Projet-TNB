@@ -9,7 +9,7 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Entity
+/*@Entity
 @Getter
 @Setter
 @NoArgsConstructor
@@ -40,4 +40,4 @@ public class Redevable extends User{
     }
 
 
-}
+}*/

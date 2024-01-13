@@ -6,8 +6,8 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import com.bezkoder.springjwt.models.Redevable;
-import com.bezkoder.springjwt.repository.RedevableRepository;
+
+
 import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +40,7 @@ public class AuthController {
   AuthenticationManager authenticationManager;
 
   @Autowired
-  RedevableRepository userRepository;
+  UserRepository userRepository;
 
   @Autowired
   RoleRepository roleRepository;
@@ -87,7 +87,7 @@ public class AuthController {
     }
 
     // Create new user's account
-    Redevable user = new Redevable(
+    User user = new User(
             signUpRequest.getUsername(),
             signUpRequest.getEmail(),
             encoder.encode(signUpRequest.getPassword()),
@@ -136,26 +136,26 @@ public class AuthController {
 
   @GetMapping("/users")
   @PreAuthorize("permitAll()")
-  public ResponseEntity<List<Redevable>> findAllUsers() {
-    List<Redevable> users = userRepository.findAll();
+  public ResponseEntity<List<User>> findAllUsers() {
+    List<User> users = userRepository.findAll();
     return ResponseEntity.ok(users);
   }
   @GetMapping("/findByUsername/{username}")
-  public Optional<Redevable> findByUsername(@PathVariable String username) {
+  public Optional<User> findByUsername(@PathVariable String username) {
     return userRepository.findByUsername(username);
   }
   @GetMapping("/findById/{id}")
-  public Optional<Redevable> findById(@PathVariable String id) {
-    return Optional.ofNullable(userRepository.findByCin(id));
+  public Optional<User> findById(@PathVariable Long id) {
+    return userRepository.findById(id);
   }
   @PutMapping("/update/{id}")
   //@PreAuthorize("hasRole('ADMIN')") // Add appropriate authorization based on your requirements
-  public ResponseEntity<?> updateUser(@PathVariable String id,  @RequestBody SignupRequest updateUserRequest) {
-    Optional<Redevable> userData = Optional.ofNullable(userRepository.findByCin(id));
+  public ResponseEntity<?> updateUser(@PathVariable Long id,  @RequestBody SignupRequest updateUserRequest) {
+    Optional<User> userData =userRepository.findById(id);
     System.out.println("i am here !!!!!!!!!!!");
 
     if (userData.isPresent()) {
-      Redevable user = userData.get();
+      User user = userData.get();
       user.setUsername(updateUserRequest.getUsername());
       user.setEmail(updateUserRequest.getEmail());
       user.setPassword(encoder.encode(updateUserRequest.getPassword())); // Consider validating password updates

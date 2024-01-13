@@ -3,10 +3,12 @@ package com.bezkoder.springjwt.models;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 @Table(name = "users", 
@@ -31,6 +33,18 @@ public class User {
   @NotBlank
   @Size(max = 120)
   private String password;
+  @NotBlank
+  private String cin;
+  @NotBlank
+  private String nom;
+  @NotBlank
+  private String prenom;
+  @NotBlank
+  private String adresse;
+
+  @JsonIgnore
+  @OneToMany(mappedBy = "proprietaire", cascade = CascadeType.ALL)
+  private List<Terrain> terrains;
 
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(  name = "user_roles", 
@@ -39,6 +53,57 @@ public class User {
   private Set<Role> roles = new HashSet<>();
 
   public User() {
+  }
+
+  public User(String username, String email, String encode, String cin, String nom, String prenom, String adresse) {
+    this.username=username;
+    this.email=email;
+    this.password=encode;
+    this.cin=cin;
+    this.nom=nom;
+    this.prenom=prenom;
+    this.adresse=adresse;
+
+  }
+
+  public String getCin() {
+    return cin;
+  }
+
+  public void setCin(String cin) {
+    this.cin = cin;
+  }
+
+  public String getNom() {
+    return nom;
+  }
+
+  public void setNom(String nom) {
+    this.nom = nom;
+  }
+
+  public String getPrenom() {
+    return prenom;
+  }
+
+  public void setPrenom(String prenom) {
+    this.prenom = prenom;
+  }
+
+  public String getAdresse() {
+    return adresse;
+  }
+
+  public void setAdresse(String adresse) {
+    this.adresse = adresse;
+  }
+
+  public List<Terrain> getTerrains() {
+    return terrains;
+  }
+
+  public void setTerrains(List<Terrain> terrains) {
+    this.terrains = terrains;
   }
 
   public User(String username, String email, String password) {

@@ -1,9 +1,10 @@
 package com.example.terrainmanagement.service;
 
 import com.example.terrainmanagement.entity.Categorie;
-import com.example.terrainmanagement.entity.Redevable;
+
 import com.example.terrainmanagement.entity.TaxeTNB;
 import com.example.terrainmanagement.entity.Terrain;
+import com.example.terrainmanagement.entity.User;
 import com.example.terrainmanagement.repository.CategorieRepository;
 import com.example.terrainmanagement.repository.TerrainRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -42,7 +43,7 @@ public class TerrainService {
             return "surface can not be negative ";
         } else {
             try {
-                Redevable redevable = restTemplate.getForObject("http://localhost:8888/REDEVABLE-SERVICE/redevable/" + terrain.getProprietaire().getCin(), Redevable.class);
+                User redevable = restTemplate.getForObject("http://localhost:8888/REDEVABLE-SERVICE/redevable/" + terrain.getProprietaire().getCin(), User.class);
                 Categorie categorie= categorieService.findByNomCategorie(terrain.getCategorie().getNomCategorie());
                 terrain.setProprietaire(redevable);
                 terrain.setCategorie(categorie);
