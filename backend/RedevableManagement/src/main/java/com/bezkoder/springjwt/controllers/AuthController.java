@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import com.bezkoder.springjwt.models.*;
 import com.bezkoder.springjwt.security.services.UserDetailsServiceImpl;
+import jakarta.annotation.security.PermitAll;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 
@@ -55,6 +56,17 @@ public class AuthController {
   @Autowired
   private UserDetailsServiceImpl userDetailsServiceImpl;
 
+
+  @PermitAll()
+  @GetMapping("/{cin}")
+  public User findByCin(@PathVariable String cin) {
+    return userRepository.findByCin(cin);
+  }
+  @PermitAll()
+  @GetMapping("/{cin}/terrains")
+  public List<Terrain> findTerrainsByCIN(@PathVariable String cin) {
+    return userDetailsServiceImpl.findTerrainsByCIN(cin);
+  }
   @PostMapping("/signin")
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 

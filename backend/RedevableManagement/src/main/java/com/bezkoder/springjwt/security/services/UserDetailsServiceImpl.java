@@ -34,7 +34,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     return UserDetailsImpl.build(user);
   }
-
+  public List<Terrain> findTerrainsByCIN(String cin) {
+    User redevable = userRepository.findByCin(cin);
+          //  .orElseThrow(() -> new EntityNotFoundException("Redevable with CIN " + cin + " not found."));
+    return redevable.getTerrains();
+  }
   public List<TaxeTNB> findHistoriqueByCIN(String cin) {
 
     User redevable = userRepository.findByCin(cin);

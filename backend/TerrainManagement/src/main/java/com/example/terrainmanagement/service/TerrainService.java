@@ -43,9 +43,9 @@ public class TerrainService {
             return "surface can not be negative ";
         } else {
             try {
-                User redevable = restTemplate.getForObject("http://localhost:8888/REDEVABLE-SERVICE/redevable/" + terrain.getProprietaire().getCin(), User.class);
+               // User redevable = restTemplate.getForObject("http://localhost:8888/REDEVABLE-SERVICE/redevable/" + terrain.getProprietaire().getCin(), User.class);
                 Categorie categorie= categorieService.findByNomCategorie(terrain.getCategorie().getNomCategorie());
-                terrain.setProprietaire(redevable);
+               // terrain.setProprietaire(redevable);
                 terrain.setCategorie(categorie);
                 terrainRepository.save(terrain);
                 return "terrain added";
