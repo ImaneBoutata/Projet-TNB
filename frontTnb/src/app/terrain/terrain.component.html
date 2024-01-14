@@ -1,19 +1,67 @@
-<div>
+<!-- terrain.component.html -->
+
+<div class="table-container">
+  <h2>Terrain List</h2>
+
+  <button (click)="showAddForm()">Add Terrain</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Terrain ID</th>
+        <th>Surface</th>
+        <th>Categorie</th>
+        <th>Proprietaire</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let terrain of terrains">
+        <td>{{ terrain.terrainID }}</td>
+        <td>{{ terrain.surface }}</td>
+        <td>{{ terrain.categorie.nomCategorie }}</td>
+        <td>{{ terrain.proprietaire.username }}</td>
+        <td>
+          <button >Edit</button>
+          <button >Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <div *ngIf="showForm">
+
+   <!-- terrain-create.component.html -->
+
+<div class="create-terrain-container">
   <h2>Créer un terrain</h2>
   <form [formGroup]="terrainForm" (ngSubmit)="onSubmit()">
-    <div>
+    <div class="form-group">
       <label for="surface">Surface:</label>
       <input type="number" id="surface" formControlName="surface" />
     </div>
-    <div>
+    <div class="form-group">
       <label for="categorie">Catégorie:</label>
       <select id="categorie" formControlName="categorie">
         <option *ngFor="let category of categories" [value]="category.id">{{ category.nomCategorie }}</option>
       </select>
-      <div *ngIf="terrainForm.get('categorie')?.hasError('required')">
+      <div *ngIf="terrainForm.get('categorie')?.hasError('required')" class="error-message">
         La catégorie est requise.
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="user">Proprietaire:</label>
+      <select id="user" formControlName="user">
+        <option *ngFor="let user of users" [value]="user.id">{{ user.username }}</option>
+      </select>
+      <div *ngIf="terrainForm.get('user')?.hasError('required')" class="error-message">
+        Le proprietaire est requise.
       </div>
     </div>
     <button type="submit" [disabled]="terrainForm.invalid">Créer Terrain</button>
   </form>
+</div>
+
 </div>
