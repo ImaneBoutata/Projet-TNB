@@ -20,23 +20,30 @@ public class UserDetailsImpl implements UserDetails {
 
   private String username;
 
-  private String cin;
-
   private String email;
+  private String cin;
 
   @JsonIgnore
   private String password;
 
   private Collection<? extends GrantedAuthority> authorities;
 
-  public UserDetailsImpl(Long id, String username, String email, String password, String cin,
-      Collection<? extends GrantedAuthority> authorities) {
+  public String getCin() {
+    return cin;
+  }
+
+  public void setCin(String cin) {
+    this.cin = cin;
+  }
+
+  public UserDetailsImpl(Long id, String username, String email, String password,
+                         Collection<? extends GrantedAuthority> authorities, String cin) {
     this.id = id;
     this.username = username;
     this.email = email;
     this.password = password;
-    this.cin=cin;
     this.authorities = authorities;
+    this.cin=cin;
   }
 
   public static UserDetailsImpl build(User user) {
@@ -48,9 +55,9 @@ public class UserDetailsImpl implements UserDetails {
         user.getId(), 
         user.getUsername(), 
         user.getEmail(),
-        user.getPassword(),
-        user.getCin(),
-        authorities);
+        user.getPassword(), 
+        authorities,
+            user.getCin());
   }
 
   @Override
@@ -74,10 +81,6 @@ public class UserDetailsImpl implements UserDetails {
   @Override
   public String getUsername() {
     return username;
-  }
-
-  public String getCin() {
-    return cin;
   }
 
   @Override
@@ -109,4 +112,5 @@ public class UserDetailsImpl implements UserDetails {
     UserDetailsImpl user = (UserDetailsImpl) o;
     return Objects.equals(id, user.id);
   }
+
 }

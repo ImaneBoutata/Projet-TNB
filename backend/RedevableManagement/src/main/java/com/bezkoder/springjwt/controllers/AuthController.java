@@ -51,8 +51,7 @@ public class AuthController {
   @Autowired
   JwtUtils jwtUtils;
 
-  @Autowired
-  private RestTemplate restTemplate;
+
   @Autowired
   private UserDetailsServiceImpl userDetailsServiceImpl;
 
@@ -80,7 +79,9 @@ public class AuthController {
                          userDetails.getId(), 
                          userDetails.getUsername(),
                          userDetails.getEmail(), 
-                         roles));
+                         roles,
+            userDetails.getCin()
+    ));
   }
 
   @PostMapping("/signup")
@@ -144,6 +145,7 @@ public class AuthController {
 
     return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
   }
+  @PermitAll()
   @GetMapping("/findHistoriqueByCIN/{cin}")
   public List<TaxeTNB> findHistoriqueByCIN(@PathVariable String cin) {
     return userDetailsServiceImpl.findHistoriqueByCIN(cin);
