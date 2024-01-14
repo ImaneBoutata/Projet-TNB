@@ -1,0 +1,19 @@
+<div>
+  <h2>Créer un terrain</h2>
+  <form [formGroup]="terrainForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="surface">Surface:</label>
+      <input type="number" id="surface" formControlName="surface" />
+    </div>
+    <div>
+      <label for="categorie">Catégorie:</label>
+      <select id="categorie" formControlName="categorie">
+        <option *ngFor="let category of categories" [value]="category.id">{{ category.nomCategorie }}</option>
+      </select>
+      <div *ngIf="terrainForm.get('categorie')?.hasError('required')">
+        La catégorie est requise.
+      </div>
+    </div>
+    <button type="submit" [disabled]="terrainForm.invalid">Créer Terrain</button>
+  </form>
+</div>
