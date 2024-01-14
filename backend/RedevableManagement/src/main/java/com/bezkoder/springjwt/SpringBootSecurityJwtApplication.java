@@ -14,7 +14,7 @@ public class SpringBootSecurityJwtApplication {
 	}
 
 	@Bean
-	@LoadBalanced
+	//@LoadBalanced
 	public RestTemplate restTemplate(){
 		return new RestTemplate();
 	}
