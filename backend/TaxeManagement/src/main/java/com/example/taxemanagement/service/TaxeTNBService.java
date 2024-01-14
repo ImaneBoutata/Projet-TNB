@@ -48,7 +48,7 @@ public class TaxeTNBService {
         validateTerrainExistence(terrainId);
         return taxeTNBRepository.findByTerrainTerrainID(terrainId);
     }
-
+ 
     // Additional methods for CRUD operations and other functionalities
 
     private void validateTerrainExistence(Long terrainId) {
