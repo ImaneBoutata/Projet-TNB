@@ -1,5 +1,5 @@
 package com.example.terrainmanagement.entity;
-
+/*
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -21,7 +21,7 @@ import java.util.List;
 
 
 
-public class Redevable  extends User{
+public class Redevable  {
 
     private String cin;
     private String nom;
@@ -33,4 +33,4 @@ public class Redevable  extends User{
     private List<Terrain> terrains;
 
     // Getters and setters
-}
+}*/

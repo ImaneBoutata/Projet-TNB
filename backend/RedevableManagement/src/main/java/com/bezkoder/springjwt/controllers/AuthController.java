@@ -1,16 +1,17 @@
 package com.bezkoder.springjwt.controllers;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
-import com.bezkoder.springjwt.models.Redevable;
-import com.bezkoder.springjwt.repository.RedevableRepository;
+
+import com.bezkoder.springjwt.models.*;
+import com.bezkoder.springjwt.security.services.UserDetailsServiceImpl;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -20,9 +21,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import com.bezkoder.springjwt.models.ERole;
-import com.bezkoder.springjwt.models.Role;
-import com.bezkoder.springjwt.models.User;
 import com.bezkoder.springjwt.payload.request.LoginRequest;
 import com.bezkoder.springjwt.payload.request.SignupRequest;
 import com.bezkoder.springjwt.payload.response.JwtResponse;
@@ -31,6 +29,7 @@ import com.bezkoder.springjwt.repository.RoleRepository;
 import com.bezkoder.springjwt.repository.UserRepository;
 import com.bezkoder.springjwt.security.jwt.JwtUtils;
 import com.bezkoder.springjwt.security.services.UserDetailsImpl;
+import org.springframework.web.client.RestTemplate;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -40,7 +39,7 @@ public class AuthController {
   AuthenticationManager authenticationManager;
 
   @Autowired
-  RedevableRepository userRepository;
+  UserRepository userRepository;
 
   @Autowired
   RoleRepository roleRepository;
@@ -50,6 +49,11 @@ public class AuthController {
 
   @Autowired
   JwtUtils jwtUtils;
+
+  @Autowired
+  private RestTemplate restTemplate;
+  @Autowired
+  private UserDetailsServiceImpl userDetailsServiceImpl;
 
   @PostMapping("/signin")
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
@@ -87,7 +91,7 @@ public class AuthController {
     }
 
     // Create new user's account
-    Redevable user = new Redevable(
+    User user = new User(
             signUpRequest.getUsername(),
             signUpRequest.getEmail(),
             encoder.encode(signUpRequest.getPassword()),
@@ -133,29 +137,32 @@ public class AuthController {
 
     return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
   }
-
+  @GetMapping("/findHistoriqueByCIN/{cin}")
+  public List<TaxeTNB> findHistoriqueByCIN(String cin) {
+    return userDetailsServiceImpl.findHistoriqueByCIN(cin);
+  }
   @GetMapping("/users")
   @PreAuthorize("permitAll()")
-  public ResponseEntity<List<Redevable>> findAllUsers() {
-    List<Redevable> users = userRepository.findAll();
+  public ResponseEntity<List<User>> findAllUsers() {
+    List<User> users = userRepository.findAll();
     return ResponseEntity.ok(users);
   }
   @GetMapping("/findByUsername/{username}")
-  public Optional<Redevable> findByUsername(@PathVariable String username) {
+  public Optional<User> findByUsername(@PathVariable String username) {
     return userRepository.findByUsername(username);
   }
   @GetMapping("/findById/{id}")
-  public Optional<Redevable> findById(@PathVariable String id) {
-    return Optional.ofNullable(userRepository.findByCin(id));
+  public Optional<User> findById(@PathVariable Long id) {
+    return userRepository.findById(id);
   }
   @PutMapping("/update/{id}")
   //@PreAuthorize("hasRole('ADMIN')") // Add appropriate authorization based on your requirements
-  public ResponseEntity<?> updateUser(@PathVariable String id,  @RequestBody SignupRequest updateUserRequest) {
-    Optional<Redevable> userData = Optional.ofNullable(userRepository.findByCin(id));
+  public ResponseEntity<?> updateUser(@PathVariable Long id,  @RequestBody SignupRequest updateUserRequest) {
+    Optional<User> userData = userRepository.findById(id);
     System.out.println("i am here !!!!!!!!!!!");
 
     if (userData.isPresent()) {
-      Redevable user = userData.get();
+      User user = userData.get();
       user.setUsername(updateUserRequest.getUsername());
       user.setEmail(updateUserRequest.getEmail());
       user.setPassword(encoder.encode(updateUserRequest.getPassword())); // Consider validating password updates

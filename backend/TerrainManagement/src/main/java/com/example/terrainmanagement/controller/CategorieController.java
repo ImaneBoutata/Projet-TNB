@@ -39,6 +39,11 @@ public class CategorieController {
         return categorieService.findByNomCategorie(nomCategorie);
     }
 
+    @GetMapping("/taux/nom/{nomCategorie}")
+    public double getTauxByCategorieName(@PathVariable String nomCategorie) {
+        return categorieService.getTauxByCategorieName(nomCategorie);
+    }
+
 
 }
 

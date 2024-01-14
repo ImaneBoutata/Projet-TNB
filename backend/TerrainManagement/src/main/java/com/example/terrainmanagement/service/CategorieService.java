@@ -34,8 +34,19 @@ public class CategorieService {
     public Categorie findByNomCategorie(String nomCategorie) {
         return categorieRepository.findByNomCategorie(nomCategorie);
     }
-    //==============================================================================================
 
+    public double getTauxByCategorieName(String categoryName) {
+        Optional<Categorie> optionalCategorie = Optional.ofNullable(categorieRepository.findByNomCategorie(categoryName));
+
+        if (optionalCategorie.isPresent()) {
+            return optionalCategorie.get().getTaux();
+        } else {
+            // Handle the case where the category with the given name is not found
+            return 0.0; // You can choose a default value or throw an exception
+
+            //==============================================================================================
+        }
+    }
 
 
     // Additional methods for CRUD operations and retrieving tax rate by category

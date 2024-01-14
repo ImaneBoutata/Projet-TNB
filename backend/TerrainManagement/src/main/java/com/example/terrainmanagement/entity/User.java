@@ -11,11 +11,11 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "users", 
-    uniqueConstraints = { 
-      @UniqueConstraint(columnNames = "username"),
-      @UniqueConstraint(columnNames = "email") 
-    })
+@Table(name = "users",
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = "username"),
+                @UniqueConstraint(columnNames = "email")
+        })
 public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,32 +34,34 @@ public class User {
   @Size(max = 120)
   private String password;
 
-  @NotBlank
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(  name = "user_roles",
+          joinColumns = @JoinColumn(name = "user_id"),
+          inverseJoinColumns = @JoinColumn(name = "role_id"))
+  private Set<Role> roles = new HashSet<>();
+
+
+
   private String cin;
-  @NotBlank
   private String nom;
-  @NotBlank
   private String prenom;
-  @NotBlank
   private String adresse;
 
   @JsonIgnore
   @OneToMany(mappedBy = "proprietaire", cascade = CascadeType.ALL)
   private List<Terrain> terrains;
-
-  @ManyToMany(fetch = FetchType.LAZY)
-  @JoinTable(  name = "user_roles", 
-        joinColumns = @JoinColumn(name = "user_id"), 
-        inverseJoinColumns = @JoinColumn(name = "role_id"))
-  private Set<Role> roles = new HashSet<>();
-
   public User() {
   }
 
-  public User(String username, String email, String password) {
-    this.username = username;
-    this.email = email;
-    this.password = password;
+  public User(String username, String email, String encode, String cin, String nom, String prenom, String adresse) {
+    this.username=username;
+    this.email=email;
+    this.password=encode;
+    this.cin=cin;
+    this.nom=nom;
+    this.prenom=prenom;
+    this.adresse=adresse;
+
   }
 
   public String getCin() {
@@ -100,6 +102,12 @@ public class User {
 
   public void setTerrains(List<Terrain> terrains) {
     this.terrains = terrains;
+  }
+
+  public User(String username, String email, String password) {
+    this.username = username;
+    this.email = email;
+    this.password = password;
   }
 
   public Long getId() {

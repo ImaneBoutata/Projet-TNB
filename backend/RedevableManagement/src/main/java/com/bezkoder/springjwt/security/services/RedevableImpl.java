@@ -1,6 +1,6 @@
 package com.bezkoder.springjwt.security.services;
 
-
+/*
 import com.bezkoder.springjwt.models.Redevable;
 import com.bezkoder.springjwt.models.Terrain;
 import com.bezkoder.springjwt.repository.RedevableRepository;
@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.regex.Pattern;
 
-@Service
+
 public class RedevableImpl {
     private final RedevableRepository redevableRepository;
 
-    @Autowired
+
     public RedevableImpl(RedevableRepository redevableRepository) {
         this.redevableRepository = redevableRepository;
     }
@@ -59,3 +59,4 @@ public class RedevableImpl {
     // Additional methods for CRUD operations and historical taxes
 }
 
+*/

@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
-public interface RedevableRepository extends JpaRepository<Redevable,String> {
+
+/*public interface RedevableRepository extends JpaRepository<Redevable,String> {
 
     Redevable findByCin(String cin);
 
@@ -20,4 +20,4 @@ public interface RedevableRepository extends JpaRepository<Redevable,String> {
     Boolean existsByEmail(String email);
 
 
-}
+}*/
