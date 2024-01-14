@@ -1,5 +1,22 @@
-<p>home works!</p>
-<!-- terrains.component.html -->
-<div *ngFor="let terrain of terrains">
-  <p>{{ terrain.terrainID }} - {{ terrain.surface }} - {{ terrain.categorie.name }} - {{ terrain.proprietaire.name }}</p>
+<div class="user-welcome" *ngIf="isLoggedIn">
+  <h2>Welcome, User!</h2>
+  <p>Your CIN: {{ cin }}</p>
+
+  <div *ngIf="terrains.length > 0; else noTerrains">
+    <h3>Your Terrains:</h3>
+    <ul class="terrain-list">
+      <li *ngFor="let terrain of terrains" class="terrain-item">
+        <div class="terrain-info">
+          <span class="terrain-property">Surface: {{ terrain.surface }} m²</span>
+          <span class="terrain-property">Categorie: {{ terrain.categorie.nomCategorie }}</span>
+          <button class="voir-button" >Voir Taxe</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #noTerrains>
+    <p class="no-terrains-msg">No terrains found.</p>
+  </ng-template>
+
 </div>
