@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import com.bezkoder.springjwt.models.*;
 import com.bezkoder.springjwt.security.services.UserDetailsServiceImpl;
+import jakarta.annotation.security.PermitAll;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 
@@ -138,7 +139,7 @@ public class AuthController {
     return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
   }
   @GetMapping("/findHistoriqueByCIN/{cin}")
-  public List<TaxeTNB> findHistoriqueByCIN(String cin) {
+  public List<TaxeTNB> findHistoriqueByCIN(@PathVariable String cin) {
     return userDetailsServiceImpl.findHistoriqueByCIN(cin);
   }
   @GetMapping("/users")
@@ -198,5 +199,10 @@ public class AuthController {
     } else {
       return ResponseEntity.badRequest().body(new MessageResponse("Error: User not found!"));
     }
+  }
+  @PermitAll
+  @GetMapping("/findByCin/{cin}")
+  public User findByCin(@PathVariable String cin) {
+    return userRepository.findByCin(cin);
   }
 }

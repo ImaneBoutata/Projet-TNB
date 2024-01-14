@@ -4,8 +4,7 @@ package com.bezkoder.springjwt.controllers;
 
 import com.bezkoder.springjwt.models.Redevable;
 import com.bezkoder.springjwt.models.Terrain;
-import com.bezkoder.springjwt.security.services.RedevableImpl;
-import com.bezkoder.springjwt.security.services.RedevableRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
