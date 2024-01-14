@@ -4,6 +4,7 @@ import { Observable, catchError } from 'rxjs';
 import { Terrain } from '../models/terrain.model';
 import { Categorie } from '../models/categorie.model';
 import { authHeader } from './auth.header';
+import { User } from '../models/user.model';
 
 const AUTH_API = 'http://localhost:8094/api/auth';
 
@@ -38,14 +39,21 @@ export class AuthService {
     }, httpOptions);
   }
 
-  register(username: string, email: string, password: string): Observable<any> {
+  register(username: string, email: string, password: string, cin: string, nom: string, prenom: string, adresse: string): Observable<any> {
     return this.http.post(AUTH_API + '/signup', {
       username,
       email,
-      password
+      password,
+      cin,
+      nom,
+      prenom,
+      adresse
     }, httpOptions);
   }
 
+  findById(id: number): Observable<User> {
+    return this.http.get<User>(`${AUTH_API}/findById/${id}`);
+  }
 
   getAllCategories(): Observable<Categorie[]> {
     return this.http.get<Categorie[]>(`${categoriurl}/all`).pipe(

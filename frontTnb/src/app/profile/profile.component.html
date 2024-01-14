@@ -1,1 +1,43 @@
-<p>profile works!</p>
+<br/><br/>
+
+<div class="user-profile" *ngIf="user">
+
+  <h2>User Profile</h2>
+
+  <div class="profile-item">
+    <strong>ID:</strong> {{ user.id }}
+  </div>
+
+  <div class="profile-item">
+    <strong>Username:</strong> {{ user.username }}
+  </div>
+
+  <div class="profile-item">
+    <strong>Email:</strong> {{ user.email }}
+  </div>
+
+  <div class="profile-item">
+    <strong>CIN:</strong> {{ user.cin }}
+  </div>
+
+  <div class="profile-item">
+    <strong>Nom:</strong> {{ user.nom }}
+  </div>
+
+  <div class="profile-item">
+    <strong>Prenom:</strong> {{ user.prenom }}
+  </div>
+
+  <div class="profile-item">
+    <strong>Adresse:</strong> {{ user.adresse }}
+  </div>
+
+  <!-- Add more properties as needed -->
+
+  <!-- Example: Displaying terrains associated with the user -->
+
+</div>
+
+<div *ngIf="!user">
+  <p>Loading user details...</p>
+</div>

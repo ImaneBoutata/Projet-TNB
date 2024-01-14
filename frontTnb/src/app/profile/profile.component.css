@@ -1,0 +1,22 @@
+.user-profile {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.profile-item {
+  margin-bottom: 10px;
+}
+
+.terrains-heading {
+  margin-top: 20px;
+}
+
+.terrain-list {
+  list-style: none;
+  padding: 0;
+}
+
+.terrain-item {
+  margin-bottom: 5px;
+}
