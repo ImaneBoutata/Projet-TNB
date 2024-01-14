@@ -64,6 +64,15 @@ export class AuthService {
     );
   }
 
+  getAllUser(): Observable<User[]> {
+    return this.http.get<User[]>(`${AUTH_API}/users`).pipe(
+      catchError((error) => {
+        console.error('Error fetching users:', error);
+        throw error;
+      })
+    );
+  }
+
 
   createTerrain(terrain: Terrain): Observable<Terrain> {
     return this.http.post<Terrain>(apiUrl + '/save', terrain);
@@ -73,4 +82,27 @@ export class AuthService {
     const headers = authHeader();
     return this.http.get(`${AUTH_API}/${cin}/terrains`, { headers });
   }
+
+
+  getAllTerrains(): Observable<Terrain[]> {
+    const url = `${apiUrl}/all`;
+    return this.http.get<Terrain[]>(url);
+  }
+
+  getTerrainById(id: number): Observable<Terrain> {
+    return this.http.get<Terrain>(`${apiUrl}/findById/${id}`);
+  }
+
+  saveTerrain(terrain: Terrain): Observable<Terrain> {
+    return this.http.post<Terrain>(`${apiUrl}/save`, terrain);
+  }
+
+  updateTerrain(terrain: Terrain): Observable<number> {
+    return this.http.post<number>(`${apiUrl}/update`, terrain);
+  }
+
+  deleteTerrain(id: number): Observable<void> {
+    return this.http.delete<void>(`${apiUrl}/${id}`);
+  }
+
 }
