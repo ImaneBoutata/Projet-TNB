@@ -44,7 +44,7 @@ public class User {
   private String prenom;
   private String adresse;
 
-  //@JsonIgnore
+  @JsonIgnore
   @OneToMany(mappedBy = "proprietaire", cascade = CascadeType.ALL)
   private List<Terrain> terrains;
   public User() {

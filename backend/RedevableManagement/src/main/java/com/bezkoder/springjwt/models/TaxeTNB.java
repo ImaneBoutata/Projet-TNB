@@ -1,5 +1,6 @@
 package com.bezkoder.springjwt.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
@@ -22,8 +23,8 @@ public class TaxeTNB {
     private int annee;
     private double montantPaye;
 
+    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "terrain_id")
     private Terrain terrain;
 
     // Getters and setters

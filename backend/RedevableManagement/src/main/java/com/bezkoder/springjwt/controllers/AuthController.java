@@ -56,6 +56,12 @@ public class AuthController {
   @Autowired
   private UserDetailsServiceImpl userDetailsServiceImpl;
 
+
+  @PermitAll()
+  @GetMapping("/{cin}/terrains")
+  public List<Terrain> findTerrainsByCIN(@PathVariable String cin) {
+    return userDetailsServiceImpl.findTerrainsByCIN(cin);
+  }
   @PostMapping("/signin")
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 

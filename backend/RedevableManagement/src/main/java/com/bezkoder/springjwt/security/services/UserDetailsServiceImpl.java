@@ -35,7 +35,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     return UserDetailsImpl.build(user);
   }
-
+  public List<Terrain> findTerrainsByCIN(String cin) {
+    User redevable = userRepository.findByCin(cin);
+          //  .orElseThrow(() -> new EntityNotFoundException("Redevable with CIN " + cin + " not found."));
+    return redevable.getTerrains();
+  }
   public List<TaxeTNB> findHistoriqueByCIN(String cin) {
 
     User redevable = userRepository.findByCin(cin);
@@ -45,8 +49,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     ParameterizedTypeReference<List<TaxeTNB>> responseType = new ParameterizedTypeReference<List<TaxeTNB>>() {};
     List<TaxeTNB> taxesList = new ArrayList<>();
     for(Terrain t: redevable.getTerrains()){
-      String apiUrl="http://Taxe-SERVICE/taxe-tnb/"+t.getTerrainID()+"/history";
+      String apiUrl="http://localhost:8888/TAXE-SERVICE/taxe-tnb/"+t.getTerrainID()+"/history";
       ResponseEntity<List<TaxeTNB>> responseEntity = restTemplate.exchange(apiUrl, HttpMethod.GET, null, responseType);
+      System.out.println("les liiiiiiiistes !!!!!!  "+ responseEntity.getBody());
       taxesList.addAll(responseEntity.getBody());
     }
     return taxesList;

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/terrain")
 public class TerrainController {
     private final TerrainService terrainService;
@@ -25,9 +26,9 @@ public class TerrainController {
     }
 
     @PostMapping("/save")
-    public String saveTerrain(@RequestBody TerrainRequest request) {
-        Terrain terrain = request.getTerrain();
-        return terrainService.saveTerrain(terrain);
+    public String saveTerrain(@RequestBody Terrain request) {
+        //Terrain terrain = request.getTerrain();
+        return terrainService.saveTerrain(request);
     }
 
     @GetMapping("/{id}")
