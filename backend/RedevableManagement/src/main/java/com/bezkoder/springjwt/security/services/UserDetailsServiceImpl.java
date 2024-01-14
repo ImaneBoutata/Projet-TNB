@@ -19,6 +19,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -50,6 +51,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     for(Terrain t: redevable.getTerrains()){
       String apiUrl="http://localhost:8888/TAXE-SERVICE/taxe-tnb/"+t.getTerrainID()+"/history";
       ResponseEntity<List<TaxeTNB>> responseEntity = restTemplate.exchange(apiUrl, HttpMethod.GET, null, responseType);
+      System.out.println("les liiiiiiiistes !!!!!!  "+ responseEntity.getBody());
       taxesList.addAll(responseEntity.getBody());
     }
     return taxesList;

@@ -51,17 +51,11 @@ public class AuthController {
   @Autowired
   JwtUtils jwtUtils;
 
-  @Autowired
-  private RestTemplate restTemplate;
+
   @Autowired
   private UserDetailsServiceImpl userDetailsServiceImpl;
 
 
-  @PermitAll()
-  @GetMapping("/{cin}")
-  public User findByCin(@PathVariable String cin) {
-    return userRepository.findByCin(cin);
-  }
   @PermitAll()
   @GetMapping("/{cin}/terrains")
   public List<Terrain> findTerrainsByCIN(@PathVariable String cin) {
@@ -213,5 +207,10 @@ public class AuthController {
     } else {
       return ResponseEntity.badRequest().body(new MessageResponse("Error: User not found!"));
     }
+  }
+  @PermitAll
+  @GetMapping("/findByCin/{cin}")
+  public User findByCin(@PathVariable String cin) {
+    return userRepository.findByCin(cin);
   }
 }

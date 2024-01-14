@@ -37,7 +37,7 @@ public class UserDetailsImpl implements UserDetails {
   }
 
   public UserDetailsImpl(Long id, String username, String email, String password,
-                         Collection<? extends GrantedAuthority> authorities,String cin) {
+                         Collection<? extends GrantedAuthority> authorities, String cin) {
     this.id = id;
     this.username = username;
     this.email = email;

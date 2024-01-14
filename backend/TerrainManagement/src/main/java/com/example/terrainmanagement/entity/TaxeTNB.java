@@ -26,7 +26,6 @@ public class TaxeTNB {
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "terrain_id")
     private Terrain terrain;
 
     // Getters and setters
