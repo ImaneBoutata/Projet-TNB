@@ -1,1 +1,5 @@
 <p>home works!</p>
+<!-- terrains.component.html -->
+<div *ngFor="let terrain of terrains">
+  <p>{{ terrain.terrainID }} - {{ terrain.surface }} - {{ terrain.categorie.name }} - {{ terrain.proprietaire.name }}</p>
+</div>
