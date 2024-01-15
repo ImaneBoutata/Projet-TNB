@@ -23,8 +23,6 @@ public class TaxeTNB {
     private double surface;
     private int annee;
     private double montantPaye;
-
-
     @JsonIgnore
     @ManyToOne
     //@JoinColumn(name = "terrain_id")

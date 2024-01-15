@@ -27,6 +27,7 @@ const routes: Routes = [
   { path: 'addtaxe', component: AddTaxeComponent },
 
   { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
