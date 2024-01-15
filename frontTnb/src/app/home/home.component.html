@@ -9,7 +9,7 @@
         <div class="terrain-info">
           <span class="terrain-property">Surface: {{ terrain.surface }} m²</span>
           <span class="terrain-property">Categorie: {{ terrain.categorie.nomCategorie }}</span>
-          <button class="voir-button" >Voir Taxe</button>
+          <button class="voir-button" (click)="redirectToTaxeTnbComponent()">Voir Taxe</button>
         </div>
       </li>
     </ul>

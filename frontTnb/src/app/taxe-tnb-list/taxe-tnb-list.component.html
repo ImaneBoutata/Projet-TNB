@@ -1,0 +1,34 @@
+<div class="user-welcome" *ngIf="isLoggedIn">
+  <h2>Taxes List:</h2>
+
+  <div class="taxe-table-container">
+    <button class="add-tax-button" (click)="openAddTaxModal()">Add Tax</button>
+
+    <table class="taxe-table" *ngIf="taxes.length > 0; else noTerrains">
+      <thead>
+      <tr>
+        <th>Surface (m²)</th>
+        <th>Taux Terrain</th>
+        <th>Année</th>
+        <th>Montant à Payer</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let tax of taxes; let even = even" [ngClass]="{'even-row': even, 'odd-row': !even}">
+        <td>{{ tax.surface }}</td>
+        <td>{{ tax.tauxTerrain }}</td>
+        <td>{{ tax.annee }}</td>
+        <td>{{ tax.montantPaye }}</td>
+        <td>
+          <button class="voir-button" >Payer</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noTerrains>
+    <p class="no-taxes-msg">No taxes found.</p>
+  </ng-template>
+</div>

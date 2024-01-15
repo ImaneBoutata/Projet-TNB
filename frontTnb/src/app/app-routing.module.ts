@@ -9,6 +9,9 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { TerrainComponent } from './terrain/terrain.component';
+import {TaxeTnbComponent} from "./taxe-tnb/taxe-tnb.component";
+import {TaxeTnbListComponent} from "./taxe-tnb-list/taxe-tnb-list.component";
+import {AddTaxeComponent} from "./add-taxe/add-taxe.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,6 +22,10 @@ const routes: Routes = [
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
   { path: 'addTerrain', component: TerrainComponent },
+  { path: 'taxetnb', component: TaxeTnbComponent },
+  { path: 'taxetnblist', component: TaxeTnbListComponent },
+  { path: 'addtaxe', component: AddTaxeComponent },
+
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 @NgModule({
