@@ -4,22 +4,13 @@ import { Observable, catchError } from 'rxjs';
 import { Terrain } from '../models/terrain.model';
 import { Categorie } from '../models/categorie.model';
 import { authHeader } from './auth.header';
+import {TaxeTNB} from "../models/taxetnb.model";
 import { User } from '../models/user.model';
 
 const AUTH_API = 'http://localhost:8094/api/auth';
-
-
-
-
-const apiUrl = 'http://localhost:8084/terrain';  // Remplacez par l'URL de votre backend
+const apiUrl = 'http://localhost:8084/terrain';
 const categoriurl = 'http://localhost:8084/categorie';
-
-
-
-
-
-
-
+const taxeUrl = 'http://localhost:8085/taxe-tnb';
 
 
 const httpOptions = {
@@ -64,6 +55,17 @@ export class AuthService {
     );
   }
 
+  findHistoriqueByCIN(cin: string): Observable<TaxeTNB[]> {
+    return this.http.get<TaxeTNB[]>(AUTH_API+`/findHistoriqueByCIN/${cin}`);
+  }
+
+  findAllTaxes(): Observable<TaxeTNB[]> {
+      return this.http.get<TaxeTNB[]>(taxeUrl+"/all");
+  }
+
+  saveTax(taxeTNB: TaxeTNB): Observable<TaxeTNB> {
+    return this.http.post<TaxeTNB>(taxeUrl+`/save`, taxeTNB);
+  }
   getAllUser(): Observable<User[]> {
     return this.http.get<User[]>(`${AUTH_API}/users`).pipe(
       catchError((error) => {
@@ -76,6 +78,9 @@ export class AuthService {
 
   createTerrain(terrain: Terrain): Observable<Terrain> {
     return this.http.post<Terrain>(apiUrl + '/save', terrain);
+  }
+  createTaxe(taxe: TaxeTNB): Observable<TaxeTNB> {
+    return this.http.post<TaxeTNB>(taxeUrl + '/save', taxe);
   }
 
   getTerrainsByCIN(cin: string): Observable<any> {

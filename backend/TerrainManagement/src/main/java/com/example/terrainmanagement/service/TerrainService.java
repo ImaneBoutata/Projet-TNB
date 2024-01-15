@@ -66,7 +66,7 @@ public class TerrainService {
         // Implement logic to calculate tax based on terrainId
         Optional<Terrain> terrain = terrainRepository.findById(terrainId);
         Categorie categorie= categorieService.findByNomCategorie(terrain.get().getCategorie().getNomCategorie());
-        return terrain.get().getSurface() * categorie.getTaux();  // Placeholder, replace with actual calculation
+        return terrain.get().getSurface() * categorie.getTaux();
     }
 
     public boolean isTaxPaidForYear(Long terrainId, int year) {
