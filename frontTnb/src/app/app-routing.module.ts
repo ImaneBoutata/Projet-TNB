@@ -11,7 +11,6 @@ import { NgModule } from '@angular/core';
 import { TerrainComponent } from './terrain/terrain.component';
 import {TaxeTnbComponent} from "./taxe-tnb/taxe-tnb.component";
 import {TaxeTnbListComponent} from "./taxe-tnb-list/taxe-tnb-list.component";
-import {AddTaxeComponent} from "./add-taxe/add-taxe.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -24,9 +23,8 @@ const routes: Routes = [
   { path: 'addTerrain', component: TerrainComponent },
   { path: 'taxetnb', component: TaxeTnbComponent },
   { path: 'taxetnblist', component: TaxeTnbListComponent },
-  { path: 'addtaxe', component: AddTaxeComponent },
 
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 @NgModule({

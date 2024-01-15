@@ -2,11 +2,12 @@
   <h2>Taxes List:</h2>
 
   <div class="taxe-table-container">
-    <button class="add-tax-button" (click)="openAddTaxModal()">Add Tax</button>
+    <button class="add-tax-button" (click)="showAddForm()">Add Tax</button>
 
     <table class="taxe-table" *ngIf="taxes.length > 0; else noTerrains">
       <thead>
       <tr>
+        <th>Redevable</th>
         <th>Surface (m²)</th>
         <th>Taux Terrain</th>
         <th>Année</th>
@@ -16,6 +17,7 @@
       </thead>
       <tbody>
       <tr *ngFor="let tax of taxes; let even = even" [ngClass]="{'even-row': even, 'odd-row': !even}">
+        <td>{{ tax.terrain?.proprietaire?.cin}}</td>
         <td>{{ tax.surface }}</td>
         <td>{{ tax.tauxTerrain }}</td>
         <td>{{ tax.annee }}</td>
@@ -31,4 +33,49 @@
   <ng-template #noTerrains>
     <p class="no-taxes-msg">No taxes found.</p>
   </ng-template>
-</div>
+  <div *ngIf="showForm">
+
+    <!-- terrain-create.component.html -->
+
+    <div class="create-terrain-container">
+      <h2>Créer un taxe</h2>
+      <form [formGroup]="taxeForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="tauxTerrain">Taux Terrain:</label>
+          <input type="number" id="tauxTerrain" formControlName="tauxTerrain" />
+        </div>
+        <div class="form-group">
+          <label for="surface">Surface:</label>
+          <input type="number" id="surface" formControlName="surface" />
+        </div>
+        <div class="form-group">
+          <label for="annee">Annee:</label>
+          <input type="number" id="annee" formControlName="annee" />
+        </div>
+        <div class="form-group">
+          <label for="montantPaye">Montant à Payer:</label>
+          <input type="number" id="montantPaye" formControlName="montantPaye" />
+        </div>
+        <div class="form-group">
+          <label for="terrain">Terrain:</label>
+          <select id="terrain" formControlName="terrain">
+            <option *ngFor="let terrain of terrains" [value]="terrain.terrainID">{{ terrain.surface }}</option>
+          </select>
+          <div *ngIf="taxeForm.get('terrain')?.hasError('required')" class="error-message">
+            Le terrain est requis.
+          </div>
+        </div>
+
+
+        <div class="form-group">
+
+          <div *ngIf="taxeForm.get('terrain')?.hasError('required')" class="error-message">
+            Le terrain est requis.
+          </div>
+        </div>
+        <button type="submit" >Créer Taxe</button>
+      </form>
+    </div>
+
+  </div>
+

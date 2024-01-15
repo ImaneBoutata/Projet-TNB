@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../_services/auth.service";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { AddTaxeComponent } from "../add-taxe/add-taxe.component";
 import { TaxeTNB } from "../models/taxetnb.model";
 import {TokenStorageService} from "../_services/token-storage.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Categorie} from "../models/categorie.model";
+import {User} from "../models/user.model";
+import {Terrain} from "../models/terrain.model";
+import {forkJoin} from "rxjs";
 
 @Component({
   selector: 'app-taxe-tnb-list',
@@ -12,10 +16,25 @@ import {TokenStorageService} from "../_services/token-storage.service";
 })
 export class TaxeTnbListComponent implements OnInit {
     taxes: TaxeTNB[] = [];
-    taxeTNB:TaxeTNB;
-  isLoggedIn = false;
+
+    public taxe?: TaxeTNB;
+    taxeForm: FormGroup;
+    terrains: Terrain[] = [];
+    showForm: boolean = false;
+
+    isLoggedIn = false;
+  //  public terrain?: Terrain;
+
   constructor(private taxeTnbService: AuthService, private modalService: NgbModal
-              ,private tokenStorageService: TokenStorageService) {}
+              ,private tokenStorageService: TokenStorageService,private formBuilder: FormBuilder,) {
+      this.taxeForm = this.formBuilder.group({
+          tauxTerrain: ['', Validators.required],
+          surface: ['', Validators.required],
+          annee: ['', Validators.required],
+          montantPaye: ['', Validators.required],
+          terrain: [null, Validators.required],
+      });
+  }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
@@ -23,17 +42,18 @@ export class TaxeTnbListComponent implements OnInit {
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
       this.loadAllTaxes();
+      this.loadTerrains();
     }
   }
-
+/*
   openAddTaxModal(): void {
     const modalRef = this.modalService.open(AddTaxeComponent, { centered: true });
     modalRef.componentInstance.onTaxAdded.subscribe((newTax: TaxeTNB) => {
       // Handle the newly added tax (if needed)
       console.log('New Tax Added:', newTax);
     });
-  }
-
+  }*/
+/*
   saveTax(): void {
     this.taxeTnbService.saveTax(this.taxeTNB).subscribe(
       (response) => {
@@ -45,16 +65,85 @@ export class TaxeTnbListComponent implements OnInit {
         // Handle error, e.g., show an error message
       }
     );
-  }
+  }*/
     loadAllTaxes(): void {
         this.taxeTnbService.findAllTaxes().subscribe(
-            (taxes: TaxeTNB[]) => {
-                this.taxes = taxes;
-                console.log('All Taxes:', this.taxes);
+            (data) => {
+                this.taxes = data;
             },
             (error) => {
-                console.error('Error fetching taxes:', error);
+                console.error('Error loading taxes', error);
+            }
+
+        );
+    }
+
+    loadTerrains() {
+        this.taxeTnbService.getAllTerrains().subscribe(
+            (terrains: Terrain[]) => {
+                this.terrains = terrains;
+            },
+            (error) => {
+                console.error('Error loading terrains:', error);
             }
         );
     }
-}
+
+
+    showAddForm() {
+        this.showForm = true;
+    }
+
+    onSubmit() {
+        forkJoin([
+            this.taxeTnbService.getAllTerrains()
+        ]).subscribe(([terrains]) => {
+            this.terrains = terrains;
+            const tauxTerrainValue = this.taxeForm.get('tauxTerrain')?.value;
+            const surfaceValue = this.taxeForm.get('surface')?.value;
+            const anneeValue = this.taxeForm.get('annee')?.value;
+            const montantPayeValue = this.taxeForm.get('montantPaye')?.value;
+            const terrainValue = this.taxeForm.get('terrain')?.value;
+
+                        console.log('Received tauxTerrain:', tauxTerrainValue);
+                        console.log('Received surface:', surfaceValue);
+
+                        console.log('Selected anneeValue:', anneeValue);
+                        console.log('Selected terrainValue:', terrainValue);
+
+            if (surfaceValue !== undefined && tauxTerrainValue !== undefined && anneeValue !== undefined && montantPayeValue !== undefined && terrainValue !== undefined) {
+                //const selectedCategory = this.categories.find(category => category.id === +categorieValue);
+                const selectedTerrain = this.terrains.find(terrain => terrain.terrainID === +terrainValue);
+
+                //console.log('Selected category:', selectedCategory);
+
+                if (selectedTerrain) {
+                    const taxeData: TaxeTNB = {
+                        tauxTerrain: tauxTerrainValue,
+                        surface: surfaceValue,
+                        annee: anneeValue,
+                        montantPaye: montantPayeValue,
+                        terrain: selectedTerrain
+                    };
+
+                    console.log('Taxe data to be sent:', taxeData);
+
+                    this.taxeTnbService.createTaxe(taxeData).subscribe(response => {
+                        console.log('Taxe créé avec succès :', response);
+                        // Add additional actions as needed
+                        // Close the form
+                        this.showForm = false;
+
+                        // Clear the form
+                        this.taxeForm.reset();
+
+                        // Reload the list of terrains
+                        this.loadAllTaxes();
+                    });
+                } else {
+                    console.error('Selected terrain not found.');
+                }
+
+            }
+        });
+    }}

@@ -16,10 +16,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { TerrainComponent } from './terrain/terrain.component';
-import { TerrainDetailsComponent } from './terrain-details/terrain-details.component';
 import { TaxeTnbComponent } from './taxe-tnb/taxe-tnb.component';
 import { TaxeTnbListComponent } from './taxe-tnb-list/taxe-tnb-list.component';
-import { AddTaxeComponent } from './add-taxe/add-taxe.component';
+import { RedevableComponent } from './redevable/redevable.component';
 
 
 @NgModule({
@@ -33,10 +32,9 @@ import { AddTaxeComponent } from './add-taxe/add-taxe.component';
     BoardModeratorComponent,
     BoardUserComponent,
     TerrainComponent,
-    TerrainDetailsComponent,
     TaxeTnbComponent,
     TaxeTnbListComponent,
-    AddTaxeComponent
+    RedevableComponent
   ],
   imports: [
     BrowserModule,

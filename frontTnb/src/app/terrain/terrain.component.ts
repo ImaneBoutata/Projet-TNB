@@ -25,12 +25,6 @@ export class TerrainComponent implements OnInit {
 
   showForm: boolean = false;
 
-
-
-
-
-
-
   constructor(
     private formBuilder: FormBuilder,
     private terrainService: AuthService

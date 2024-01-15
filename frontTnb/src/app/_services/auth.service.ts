@@ -79,6 +79,9 @@ export class AuthService {
   createTerrain(terrain: Terrain): Observable<Terrain> {
     return this.http.post<Terrain>(apiUrl + '/save', terrain);
   }
+  createTaxe(taxe: TaxeTNB): Observable<TaxeTNB> {
+    return this.http.post<TaxeTNB>(taxeUrl + '/save', taxe);
+  }
 
   getTerrainsByCIN(cin: string): Observable<any> {
     const headers = authHeader();
