@@ -81,6 +81,22 @@ public class TerrainService {
         if(taxRecords == null) {return false;} else {return true;}
     }
 
-    // Additional methods for CRUD operations and other functionalities
+    public Optional<Terrain> findById(Long aLong) {
+        return terrainRepository.findById(aLong);
+    }
+
+    public void deleteById(Long aLong) {
+        terrainRepository.deleteById(aLong);
+    }
+
+    public int update(Terrain terrain){
+        if(terrain.getTerrainID()!=null){
+            terrainRepository.save(terrain);
+            return 1;
+        }else {
+            return 0;
+        }
+    }
+// Additional methods for CRUD operations and other functionalities
 }
 

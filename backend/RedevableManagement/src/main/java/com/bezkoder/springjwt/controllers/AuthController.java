@@ -160,6 +160,7 @@ public class AuthController {
   public Optional<User> findByUsername(@PathVariable String username) {
     return userRepository.findByUsername(username);
   }
+  @PermitAll()
   @GetMapping("/findById/{id}")
   public Optional<User> findById(@PathVariable Long id) {
     return userRepository.findById(id);

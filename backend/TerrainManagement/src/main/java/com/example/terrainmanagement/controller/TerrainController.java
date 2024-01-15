@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -46,5 +47,18 @@ public class TerrainController {
         return terrainService.isTaxPaidForYear(terrainId, year);
     }
 
+    @GetMapping("/findById/{id}")
+    public Optional<Terrain> findById(@PathVariable Long aLong) {
+        return terrainService.findById(aLong);
+    }
+
+    @DeleteMapping("{id}")
+    public void deleteById(@PathVariable Long id) {
+        terrainService.deleteById(id);
+    }
+    @PutMapping("/update")
+    public int update(Terrain terrain) {
+        return terrainService.update(terrain);
+    }
 }
 
