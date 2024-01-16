@@ -7,7 +7,6 @@
     <table class="taxe-table" *ngIf="taxes.length > 0; else noTerrains">
       <thead>
       <tr>
-        <th>Redevable</th>
         <th>Surface (m²)</th>
         <th>Taux Terrain</th>
         <th>Année</th>
@@ -17,7 +16,6 @@
       </thead>
       <tbody>
       <tr *ngFor="let tax of taxes; let even = even" [ngClass]="{'even-row': even, 'odd-row': !even}">
-        <td>{{ tax.terrain?.proprietaire?.cin}}</td>
         <td>{{ tax.surface }}</td>
         <td>{{ tax.tauxTerrain }}</td>
         <td>{{ tax.annee }}</td>

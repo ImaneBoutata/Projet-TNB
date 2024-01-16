@@ -11,6 +11,10 @@ import { NgModule } from '@angular/core';
 import { TerrainComponent } from './terrain/terrain.component';
 import {TaxeTnbComponent} from "./taxe-tnb/taxe-tnb.component";
 import {TaxeTnbListComponent} from "./taxe-tnb-list/taxe-tnb-list.component";
+import {RedevableComponent} from "./redevable/redevable.component";
+import {TerrainSpecialComponent} from "./terrain-special/terrain-special.component";
+import {TaxeSpecialComponent} from "./taxe-special/taxe-special.component";
+import {SearchComponent} from "./search/search.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -23,6 +27,10 @@ const routes: Routes = [
   { path: 'addTerrain', component: TerrainComponent },
   { path: 'taxetnb', component: TaxeTnbComponent },
   { path: 'taxetnblist', component: TaxeTnbListComponent },
+  { path: 'redevablelist', component: RedevableComponent },
+  { path: 'terrainSpecial/:cin', component: TerrainSpecialComponent },
+  { path: 'taxeSpecial/:cin', component: TaxeSpecialComponent },
+  { path: 'search', component: SearchComponent },
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '', redirectTo: 'login', pathMatch: 'full' }

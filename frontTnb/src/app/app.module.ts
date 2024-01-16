@@ -19,6 +19,10 @@ import { TerrainComponent } from './terrain/terrain.component';
 import { TaxeTnbComponent } from './taxe-tnb/taxe-tnb.component';
 import { TaxeTnbListComponent } from './taxe-tnb-list/taxe-tnb-list.component';
 import { RedevableComponent } from './redevable/redevable.component';
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import { TerrainSpecialComponent } from './terrain-special/terrain-special.component';
+import { TaxeSpecialComponent } from './taxe-special/taxe-special.component';
+import {SearchComponent} from "./search/search.component";
 
 
 @NgModule({
@@ -34,7 +38,10 @@ import { RedevableComponent } from './redevable/redevable.component';
     TerrainComponent,
     TaxeTnbComponent,
     TaxeTnbListComponent,
-    RedevableComponent
+    RedevableComponent,
+    TerrainSpecialComponent,
+    TaxeSpecialComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +49,7 @@ import { RedevableComponent } from './redevable/redevable.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgbModule
 
   ],
   providers: [authInterceptorProviders],

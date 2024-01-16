@@ -1,0 +1,35 @@
+<!-- terrain.component.html -->
+
+<div class="table-container">
+  <h2>Terrain List</h2>
+
+  <button (click)="showAddForm()">Add Terrain</button>
+  <table>
+    <thead>
+    <tr>
+      <th>Terrain ID</th>
+      <th>Surface</th>
+      <th>Categorie</th>
+      <th>Proprietaire</th>
+      <th>Taxes</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let terrain of terrains">
+      <td>{{ terrain.terrainID }}</td>
+      <td>{{ terrain.surface }}</td>
+      <td>{{ terrain.categorie.nomCategorie }}</td>
+      <td>{{ terrain.proprietaire.username }}</td>
+      <td>
+        <button class="voir-button" (click)="redirectToTerrainComponant(terrain.proprietaire.cin)" >Voir Taxes</button>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+  </div>

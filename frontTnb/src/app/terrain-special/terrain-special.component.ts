@@ -5,54 +5,74 @@ import {User} from "../models/user.model";
 import {Terrain} from "../models/terrain.model";
 import {AuthService} from "../_services/auth.service";
 import {forkJoin} from "rxjs";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-redevable',
-  templateUrl: './redevable.component.html',
-  styleUrls: ['./redevable.component.css']
+  selector: 'app-terrain-special',
+  templateUrl: './terrain-special.component.html',
+  styleUrls: ['./terrain-special.component.css']
 })
-export class RedevableComponent implements OnInit {
-
-  //terrainForm: FormGroup;
+export class TerrainSpecialComponent implements OnInit {
+  terrainForm: FormGroup;
   categories: Categorie[] = [];
-
-
   users: User[] = [];
-  public user?: User;
+
+
+  terrains: Terrain[] = [];
+  public terrain?: Terrain;
 
 
   showForm: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
-    private redevableService: AuthService,private router: Router
+    private terrainService: AuthService,    private route: ActivatedRoute, // Include ActivatedRoute in the constructor
+    private router: Router
   ) {
-
+    this.terrainForm = this.formBuilder.group({
+      surface: ['', Validators.required],
+      categorie: [null, Validators.required], // Initialize categorie as a FormControl
+      user: [null, Validators.required] // Initialize categorie as a FormControl
+    });
   }
 
 
-    redirectToTerrainComponant(cin: string): void {
-      this.router.navigate(['/terrainSpecial', cin]);
-// Navigate to the TaxeTnbComponent route
-  }
+  redirectToTerrainComponant(cin: string): void {
+    this.router.navigate(['/taxeSpecial', cin]);}
+
 
   ngOnInit(): void {
-    //this.loadTerrains();
+
+    this.route.params.subscribe(params => {
+      const cin = params['cin']; // assuming 'cin' is the parameter name in your route
+
+      if (cin) {
+        // Now you can use 'cin' in your service call
+        this.loadTerrainsByCIN(cin);
+      } else {
+        console.error('CIN parameter not provided.');
+      }
+
+      this.loadCategories();
+      this.loadUsers();
+    });
+
+
+    this.loadCategories();
     this.loadUsers();
     // this.loadTerrains();
   }
-  loadUsers() {
-    this.redevableService.getAllUser().subscribe(
+    loadTerrainsByCIN(cin: string) {
+    this.terrainService.getTerrainsByCIN(cin).subscribe(
       (data) => {
-        this.users = data;
+        this.terrains = data;
       },
       (error) => {
-        console.error('Error loading redevable', error);
+        console.error('Error loading terrains', error);
       }
     );
   }
-/*
+
   loadCategories() {
     this.terrainService.getAllCategories().subscribe(
       (categories: Categorie[]) => {
@@ -73,7 +93,7 @@ export class RedevableComponent implements OnInit {
         console.error('Error loading user:', error);
       }
     );
-  }*/
+  }
 
 
   showAddForm() {
@@ -136,8 +156,19 @@ export class RedevableComponent implements OnInit {
 
       }
     });
-  }
+  }*/
 
-*/
+
 
 }
+
+
+
+
+
+
+
+
+
+
+

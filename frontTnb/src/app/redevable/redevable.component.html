@@ -1,1 +1,38 @@
-<p>redevable works!</p>
+<!-- terrain.component.html -->
+
+<div class="table-container">
+  <h2>Redevable List</h2>
+
+  <button >Add Redevable</button>
+  <table>
+    <thead>
+    <tr>
+      <th>Redevable ID</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Adresse</th>
+      <th>terrains</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.nom }}</td>
+      <td>{{ user.prenom }}</td>
+      <td>{{ user.adresse }}</td>
+      <td>
+        <button class="voir-button" (click)="redirectToTerrainComponant(user.cin)" >Voir Terrains</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+  </div>
