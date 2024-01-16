@@ -1,6 +1,8 @@
 package com.example.taxemanagement.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
@@ -30,6 +32,7 @@ public class Terrain {
     @JoinColumn(name = "proprietaire_cin")
     private User proprietaire;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "terrain", cascade = CascadeType.ALL)
     private List<TaxeTNB> taxesTNB;
 

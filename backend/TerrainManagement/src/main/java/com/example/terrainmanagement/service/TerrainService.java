@@ -69,18 +69,10 @@ public class TerrainService {
         return terrain.get().getSurface() * categorie.getTaux();
     }
 
-    public boolean isTaxPaidForYear(Long terrainId, int year) {
-        // Implement logic to check if the tax for the specified year is paid
-        Terrain terrain = terrainRepository.findById(terrainId)
-                .orElseThrow(()-> new EntityNotFoundException("terrain with ID " + terrainId + " not found"));
-        // Use RestTemplate to call the other microservice's API
-        String apiUrl = "http://localhost:8888/TAXE-MANAGEMENT/taxe-tnb/findByTerrainAndAnnee/{annee}";
-
-        TaxeTNB taxRecords = restTemplate.getForObject(apiUrl, TaxeTNB.class, terrain, year);
-
-        if(taxRecords == null) {return false;} else {return true;}
+    public List<Terrain> findByCategorie(Categorie categorie) {
+        return terrainRepository.findByCategorie(categorie);
     }
 
-    // Additional methods for CRUD operations and other functionalities
+// Additional methods for CRUD operations and other functionalities
 }
 

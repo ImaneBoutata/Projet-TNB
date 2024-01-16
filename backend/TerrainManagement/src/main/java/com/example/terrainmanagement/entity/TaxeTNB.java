@@ -1,6 +1,7 @@
 package com.example.terrainmanagement.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.transaction.Transactional;
@@ -24,8 +25,9 @@ public class TaxeTNB {
     private int annee;
     private double montantPaye;
 
-    @JsonIgnore
-    @ManyToOne
+    @JsonBackReference
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "terrain_terrainid")
     private Terrain terrain;
 
     // Getters and setters

@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+
+  eurekaproject:
+    build:
+      context: ./eurekaproject
+    ports:
+      - "8761:8761"
+
+
+  TerrainManagement:
+    build: C:\Users\hp\Desktop\achbaro\Projet-TNB\backend\TerrainManagement
+    ports:
+      - "8084:8084"
+
+
+  spring-boot-security-jwt:
+    build: C:\Users\hp\Desktop\achbaro\Projet-TNB\backend\RedevableManagement
+    ports:
+      - "8094:8094"
+
+
+  TAXEMANAGEMENT:
+    build: C:\Users\hp\Desktop\achbaro\Projet-TNB\backend\TaxeManagement
+    ports:
+      - "8085:8085"
+
+
+  gateway:
+    build: C:\Users\hp\Desktop\achbaro\Projet-TNB\backend\gateway
+    ports:
+      - "8888:8888"
+
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD:
+    ports:
+      - "8081:80"
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: microTest
+    ports:
+      - "3306:3306"
+
+

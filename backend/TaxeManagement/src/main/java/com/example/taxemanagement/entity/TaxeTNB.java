@@ -1,7 +1,9 @@
 package com.example.taxemanagement.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
@@ -23,7 +25,8 @@ public class TaxeTNB {
     private double surface;
     private int annee;
     private double montantPaye;
-    @JsonIgnore
+
+    @JsonBackReference
     @ManyToOne
     //@JoinColumn(name = "terrain_id")
     private Terrain terrain;

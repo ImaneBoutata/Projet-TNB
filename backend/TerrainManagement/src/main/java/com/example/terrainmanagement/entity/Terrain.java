@@ -1,5 +1,6 @@
 package com.example.terrainmanagement.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.transaction.Transactional;
@@ -19,6 +20,7 @@ import java.util.List;
 public class Terrain {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "terrain_terrainid")
     private Long terrainID;
     private double surface;
 
@@ -30,6 +32,7 @@ public class Terrain {
     @JoinColumn(name = "proprietaire_cin")
     private User proprietaire;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "terrain", cascade = CascadeType.ALL)
     private List<TaxeTNB> taxesTNB;
 

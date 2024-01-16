@@ -2,6 +2,7 @@ package com.example.terrainmanagement.controller;
 
 
 import com.example.terrainmanagement.dto.TerrainRequest;
+import com.example.terrainmanagement.entity.Categorie;
 import com.example.terrainmanagement.entity.Terrain;
 import com.example.terrainmanagement.service.TerrainService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,6 @@ public class TerrainController {
 
     @PostMapping("/save")
     public String saveTerrain(@RequestBody Terrain request) {
-        //Terrain terrain = request.getTerrain();
         return terrainService.saveTerrain(request);
     }
 
@@ -41,10 +41,9 @@ public class TerrainController {
         return terrainService.calculateTax(terrainId);
     }
 
-    @GetMapping("/{terrainId}/is-tax-paid")
-    public boolean isTaxPaidForYear(@PathVariable Long terrainId, @RequestParam int year) {
-        return terrainService.isTaxPaidForYear(terrainId, year);
+    @GetMapping("/findByCategorie")
+    public List<Terrain> findByCategorie(@RequestBody Categorie categorie) {
+        return terrainService.findByCategorie(categorie);
     }
-
 }
 
