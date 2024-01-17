@@ -20,11 +20,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/taxe?createDatabaseIfNotExist=true&characterEncoding=utf-8
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
-     healthcheck:
-      test: "/usr/bin/mysql --user=root --password=root --execute \"SHOW DATABASES;\""
-      interval: 5s
-      timeout: 2s
-      retries: 100
+    
 
 
 
@@ -53,11 +49,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/taxe?createDatabaseIfNotExist=true&characterEncoding=utf-8
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
-     healthcheck:
-      test: "/usr/bin/mysql --user=root --password=root --execute \"SHOW DATABASES;\""
-      interval: 5s
-      timeout: 2s
-      retries: 100
+    
 
 
   gateway:
