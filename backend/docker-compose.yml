@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
 
-  eureka-server:
+  eurekaproject:
     build:
       context: ./eureka-server
     ports:
@@ -16,21 +16,43 @@ services:
 
 
   spring-boot-security-jwt:
-    build: C:\Users\hp\Desktop\achbaro\Projet-TNB\backend\RedevableManagement
+    build:
+      context: ./RedevableManagement
     ports:
       - "8094:8094"
-
+    depends_on:
+      - mysql
+    environment:
+        SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/taxe?createDatabaseIfNotExist=true&characterEncoding=utf-8
+        SPRING_DATASOURCE_USERNAME: root
+        SPRING_DATASOURCE_PASSWORD: root
+        BEZKODER_APP_JWTSECRET: bezKoderSecretKey
+        BEZKODER_APP_JWTEXPIRATIONMS: 86400000
 
   taxemanagement:
-    build: C:\Users\hp\Desktop\achbaro\Projet-TNB\backend\TaxeManagement
+    build:
+      context:  ./TaxeManagement
     ports:
       - "8085:8085"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/taxe?createDatabaseIfNotExist=true&characterEncoding=utf-8
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
 
 
   gateway:
-    build: C:\Users\hp\Desktop\achbaro\Projet-TNB\backend\gateway
+    build:
+      context: ./gateway
     ports:
       - "8888:8888"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/taxe?createDatabaseIfNotExist=true&characterEncoding=utf-8
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
 
 
   phpmyadmin:
@@ -38,15 +60,15 @@ services:
     environment:
       PMA_HOST: mysql
       PMA_PORT: 3306
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD: root
     ports:
-      - "8080:80"
+      - "8080:8080"
 
   mysql:
     image: mysql:latest
     environment:
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: taxe
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     ports:
       - "3306:3306"
 
