@@ -45,7 +45,6 @@ services:
   mysql:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD:''
       MYSQL_DATABASE: taxe
     ports:
       - "3306:3306"
