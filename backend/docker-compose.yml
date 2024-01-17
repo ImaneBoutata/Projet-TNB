@@ -14,7 +14,7 @@ services:
       context: ./TerrainManagement
     ports:
       - "8084:8084"
-        depends_on:
+    depends_on:
       - mysql
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/taxe?createDatabaseIfNotExist=true&characterEncoding=utf-8
