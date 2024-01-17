@@ -39,7 +39,7 @@ services:
 
   taxemanagement:
     build:
-      context:  ./TaxeManagement
+      context: ./TaxeManagement
     ports:
       - "8085:8085"
     depends_on:
