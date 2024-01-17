@@ -10,7 +10,8 @@ services:
 
 
   terrainmanagement:
-    build: C:\Users\hp\Desktop\achbaro\Projet-TNB\backend\TerrainManagement
+    build: 
+      context: ./TerrainManagement
     ports:
       - "8084:8084"
         depends_on:
