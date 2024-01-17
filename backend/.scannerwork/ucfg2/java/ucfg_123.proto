@@ -1,0 +1,22 @@
+
+ƒcom.example.terrainmanagement.service.TerrainService#getTerrainById(Ljava/lang/Long;)Lcom/example/terrainmanagement/entity/Terrain;“
+ˆ/C:/Users/ATLAS PRO ELECTRO/Projet-TNB/backend/TerrainManagement/src/main/java/com/example/terrainmanagement/service/TerrainService.java< <(!"1*ö
+1= =( Â
+¿
+= =( @
+%0:com.example.terrainmanagement.repository.TerrainRepository"__id*k
+
+__unknown_file (O*M6
+4com.example.terrainmanagement.service.TerrainService"
+terrainRepository
+Š
+> >(g
+%1"__declareFunction*e
+
+__unknown_file (IG
+E__sonar_lambda_0$com.example.terrainmanagement.service.TerrainService"
+= >(i
+"": 
+<" <()
+idjava.lang.LongB86
+4com.example.terrainmanagement.service.TerrainServiceH

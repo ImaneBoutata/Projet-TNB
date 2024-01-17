@@ -1,0 +1,3 @@
+com.example.taxemanagement.controller.TaxeTNBController#saveTax(Lcom/example/taxemanagement/entity/TaxeTNB;)Lcom/example/taxemanagement/entity/TaxeTNB;
+==
+saveTax com.example.taxemanagement.service.TaxeTNBService#saveTax(Lcom/example/taxemanagement/entity/TaxeTNB;)Lcom/example/taxemanagement/entity/TaxeTNB;

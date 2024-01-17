@@ -1,0 +1,4 @@
+com.example.taxemanagement.service.TaxeTNBService#getHistoricalTaxesForTerrain(Ljava/lang/Long;)Ljava/util/List;
+com.example.taxemanagement.service.TaxeTNBService#validateTerrainExistence(Ljava/lang/Long;)V
+==
+findByTerrainTerrainID com.example.taxemanagement.repository.TaxeTNBRepository#findByTerrainTerrainID(Ljava/lang/Long;)Ljava/util/List;

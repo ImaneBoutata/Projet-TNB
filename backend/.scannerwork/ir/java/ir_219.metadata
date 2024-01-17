@@ -1,0 +1,12 @@
+MavenWrapperDownloader#downloadFileFromURL(Ljava/lang/String;Ljava/io/File;)V
+java.io.FileOutputStream#instance-init#
+java.nio.channels.Channels#newChannel(Ljava/io/InputStream;)Ljava/nio/channels/ReadableByteChannel;
+java.net.URL#<init>(Ljava/lang/String;)V
+java.net.URL#openStream()Ljava/io/InputStream;
+java.io.FileOutputStream#<init>(Ljava/io/File;)V
+java.net.URL#instance-init#
+==
+close java.nio.channels.Channel#close()V
+getChannel java.io.FileOutputStream#getChannel()Ljava/nio/channels/FileChannel;
+transferFrom java.nio.channels.FileChannel#transferFrom(Ljava/nio/channels/ReadableByteChannel;JJ)J
+close java.io.FileOutputStream#close()V

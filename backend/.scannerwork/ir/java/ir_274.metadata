@@ -1,0 +1,16 @@
+com.bezkoder.springjwt.controllers.AuthController#authenticateUser(Lcom/bezkoder/springjwt/payload/request/LoginRequest;)LResponseEntity;
+null
+java.util.stream.Collectors#toList()Ljava/util/stream/Collector;
+com.bezkoder.springjwt.payload.response.JwtResponse#<init>(Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;)V
+com.bezkoder.springjwt.payload.response.JwtResponse#instance-init#
+==
+getPassword com.bezkoder.springjwt.payload.request.LoginRequest#getPassword()Ljava/lang/String;
+getUsername com.bezkoder.springjwt.payload.request.LoginRequest#getUsername()Ljava/lang/String;
+generateJwtToken com.bezkoder.springjwt.security.jwt.JwtUtils#generateJwtToken(LAuthentication;)Ljava/lang/String;
+getCin com.bezkoder.springjwt.security.services.UserDetailsImpl#getCin()Ljava/lang/String;
+getAuthorities com.bezkoder.springjwt.security.services.UserDetailsImpl#getAuthorities()Ljava/util/Collection;
+stream java.util.Collection#stream()Ljava/util/stream/Stream;
+map java.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+getId com.bezkoder.springjwt.security.services.UserDetailsImpl#getId()Ljava/lang/Long;
+getEmail com.bezkoder.springjwt.security.services.UserDetailsImpl#getEmail()Ljava/lang/String;
+getUsername com.bezkoder.springjwt.security.services.UserDetailsImpl#getUsername()Ljava/lang/String;

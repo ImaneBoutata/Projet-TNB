@@ -1,0 +1,63 @@
+
+‰com.example.terrainmanagement.controller.TerrainController#getTerrainById(Ljava/lang/Long;)Lcom/example/terrainmanagement/entity/Terrain;™
+Ž/C:/Users/ATLAS PRO ELECTRO/Projet-TNB/backend/TerrainManagement/src/main/java/com/example/terrainmanagement/controller/TerrainController.java$ $(!"startingBlock*›
+startingBlock$! $(8~
+|
+# #(
+%2"
+__annotate**
+
+__unknown_file (
+
+GetMapping*2
+
+__unknown_file (
+
+idjava.lang.Long€
+~
+$" $(/
+%3"
+__annotate*,
+
+__unknown_file (
+PathVariable*2
+
+__unknown_file (
+
+idjava.lang.Longx
+v
+$5 $(7
+idjava.lang.Long"__annotation*"
+
+__unknown_file (
+
+%2*"
+
+__unknown_file (
+
+%3*
+1*‹
+1% %(¿
+¼
+% %(:
+%04com.example.terrainmanagement.service.TerrainService"__id*n
+
+__unknown_file (R*P<
+:com.example.terrainmanagement.controller.TerrainController"
+terrainService÷ô
+% %(02
+%1,com.example.terrainmanagement.entity.Terrain"ƒcom.example.terrainmanagement.service.TerrainService#getTerrainById(Ljava/lang/Long;)Lcom/example/terrainmanagement/entity/Terrain;*X
+
+__unknown_file (<
+:
+%04com.example.terrainmanagement.service.TerrainService*2
+
+__unknown_file (
+
+idjava.lang.Long2 getTerrainById(Ljava/lang/Long;)"@
+% %(14
+2
+%1,com.example.terrainmanagement.entity.Terrain: 
+$" $(7
+idjava.lang.LongB><
+:com.example.terrainmanagement.controller.TerrainControllerH

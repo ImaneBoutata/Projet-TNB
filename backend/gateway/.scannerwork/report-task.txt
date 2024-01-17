@@ -1,0 +1,7 @@
+organization=hafsakarchaou
+projectKey=hafsakarchaou_suivi-livraison
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.52029
+dashboardUrl=https://sonarcloud.io/dashboard?id=hafsakarchaou_suivi-livraison
+ceTaskId=AY0XLMk7QdX5xnZgrwGv
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AY0XLMk7QdX5xnZgrwGv

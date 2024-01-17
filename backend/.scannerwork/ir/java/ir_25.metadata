@@ -1,0 +1,3 @@
+com.example.terrainmanagement.controller.TerrainController#getAllTerrains()Ljava/util/List;
+==
+getAllTerrains com.example.terrainmanagement.service.TerrainService#getAllTerrains()Ljava/util/List;

@@ -1,0 +1,62 @@
+
+fcom.example.terrainmanagement.controller.TerrainController#calculateNonBuiltLandTax(Ljava/lang/Long;)D™
+Ž/C:/Users/ATLAS PRO ELECTRO/Projet-TNB/backend/TerrainManagement/src/main/java/com/example/terrainmanagement/controller/TerrainController.java) )(*"startingBlock*³
+startingBlock)* )(H†
+ƒ
+( ((-
+%2"
+__annotate**
+
+__unknown_file (
+
+GetMapping*9
+
+__unknown_file (
+
+	terrainIdjava.lang.Longˆ
+…
+)+ )(8
+%3"
+__annotate*,
+
+__unknown_file (
+PathVariable*9
+
+__unknown_file (
+
+	terrainIdjava.lang.Long
+}
+)> )(G
+	terrainIdjava.lang.Long"__annotation*"
+
+__unknown_file (
+
+%2*"
+
+__unknown_file (
+
+%3*
+1*Œ
+1* *(¿
+¼
+* *(:
+%04com.example.terrainmanagement.service.TerrainService"__id*n
+
+__unknown_file (R*P<
+:com.example.terrainmanagement.controller.TerrainController"
+terrainService¦£
+* *(5
+%1double"Tcom.example.terrainmanagement.service.TerrainService#calculateTax(Ljava/lang/Long;)D*X
+
+__unknown_file (<
+:
+%04com.example.terrainmanagement.service.TerrainService*9
+
+__unknown_file (
+
+	terrainIdjava.lang.Long2calculateTax(Ljava/lang/Long;)"
+* *(6
+"":'
+)+ )(G
+	terrainIdjava.lang.LongB><
+:com.example.terrainmanagement.controller.TerrainControllerHX

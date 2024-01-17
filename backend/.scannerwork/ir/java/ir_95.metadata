@@ -1,0 +1,9 @@
+com.bezkoder.springjwt.security.services.UserDetailsServiceImpl#findHistoriqueByCIN(Ljava/lang/String;)Ljava/util/List;
+java.util.ArrayList#<init>()V
+java.util.ArrayList#instance-init#
+==
+addAll java.util.List#addAll(Ljava/util/Collection;)Z
+println java.io.PrintStream#println([C)V
+println java.io.PrintStream#println(Ljava/lang/String;)V
+findByCin com.bezkoder.springjwt.repository.UserRepository#findByCin(Ljava/lang/String;)Lcom/bezkoder/springjwt/models/User;
+getTerrains com.bezkoder.springjwt.models.User#getTerrains()Ljava/util/List;

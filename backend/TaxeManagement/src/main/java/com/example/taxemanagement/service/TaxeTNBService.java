@@ -53,6 +53,7 @@ public class TaxeTNBService {
 
     private void validateTerrainExistence(Long terrainId) {
         Terrain terrain= restTemplate.getForObject("http://localhost:8888/TERRAIN-MANAGEMENT/terrain/"+terrainId, Terrain.class);
+        System.out.println("terain is "+terrain);
         //Terrain terrainById = terrainService.getTerrainById(terrainId);
         if(terrain==null){throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Terrain with ID " + terrainId + " not found.");}
     }

@@ -1,0 +1,3 @@
+com.example.terrainmanagement.controller.TerrainController#calculateNonBuiltLandTax(Ljava/lang/Long;)D
+==
+calculateTax com.example.terrainmanagement.service.TerrainService#calculateTax(Ljava/lang/Long;)D

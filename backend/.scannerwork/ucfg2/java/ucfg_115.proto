@@ -1,0 +1,38 @@
+
+pcom.example.taxemanagement.service.TaxeTNBService#getHistoricalTaxesForTerrain(Ljava/lang/Long;)Ljava/util/List;ç
+Ç/C:/Users/ATLAS PRO ELECTRO/Projet-TNB/backend/TaxeManagement/src/main/java/com/example/taxemanagement/service/TaxeTNBService.java/ /(5"1*”
+10 0( Ü
+É
+0 0(+
+
+%0void"]com.example.taxemanagement.service.TaxeTNBService#validateTerrainExistence(Ljava/lang/Long;)V*Q
+
+__unknown_file (53
+1com.example.taxemanagement.service.TaxeTNBService*9
+
+__unknown_file (
+
+	terrainIdjava.lang.Longº
+π
+1 1( =
+%17com.example.taxemanagement.repository.TaxeTNBRepository"__id*h
+
+__unknown_file (L*J3
+1com.example.taxemanagement.service.TaxeTNBService"
+taxeTNBRepository◊‘
+1 1(B
+%2java.util.List"pcom.example.taxemanagement.repository.TaxeTNBRepository#findByTerrainTerrainID(Ljava/lang/Long;)Ljava/util/List;*[
+
+__unknown_file (?
+=
+%17com.example.taxemanagement.repository.TaxeTNBRepository*9
+
+__unknown_file (
+
+	terrainIdjava.lang.Long2(findByTerrainTerrainID(Ljava/lang/Long;)""
+1 1(C
+
+%2java.util.List:'
+/6 /(D
+	terrainIdjava.lang.LongB53
+1com.example.taxemanagement.service.TaxeTNBServiceH

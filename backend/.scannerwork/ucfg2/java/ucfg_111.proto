@@ -1,0 +1,18 @@
+
+@com.example.taxemanagement.entity.User#getRoles()Ljava/util/Set;ƒ
+w/C:/Users/ATLAS PRO ELECTRO/Projet-TNB/backend/TaxeManagement/src/main/java/com/example/taxemanagement/entity/User.java‘ ‘("1*²
+1
+’ ’(|
+z
+
+’ ’(
+%0java.util.Set"__id*Q
+
+__unknown_file (5*3(
+&com.example.taxemanagement.entity.User"
+roles"#
+
+’ ’(
+
+%0java.util.SetB*(
+&com.example.taxemanagement.entity.UserH

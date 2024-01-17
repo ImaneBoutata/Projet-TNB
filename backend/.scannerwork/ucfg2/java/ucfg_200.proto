@@ -1,0 +1,63 @@
+
+vcom.example.taxemanagement.controller.TaxeTNBController#getHistoricalTaxesForTerrain(Ljava/lang/Long;)Ljava/util/List;“
+ˆ/C:/Users/ATLAS PRO ELECTRO/Projet-TNB/backend/TaxeManagement/src/main/java/com/example/taxemanagement/controller/TaxeTNBController.java (5"startingBlock*³
+startingBlock5 (S†
+ƒ
+ ('
+%2"
+__annotate**
+
+__unknown_file (
+
+GetMapping*9
+
+__unknown_file (
+
+	terrainIdjava.lang.Longˆ
+…
+6 (C
+%3"
+__annotate*,
+
+__unknown_file (
+PathVariable*9
+
+__unknown_file (
+
+	terrainIdjava.lang.Long
+}
+I (R
+	terrainIdjava.lang.Long"__annotation*"
+
+__unknown_file (
+
+%2*"
+
+__unknown_file (
+
+%3*
+1*Ç
+1 (¹
+¶
+ (7
+%01com.example.taxemanagement.service.TaxeTNBService"__id*k
+
+__unknown_file (O*M9
+7com.example.taxemanagement.controller.TaxeTNBController"
+taxeTNBService×Ô
+ (E
+%1java.util.List"pcom.example.taxemanagement.service.TaxeTNBService#getHistoricalTaxesForTerrain(Ljava/lang/Long;)Ljava/util/List;*U
+
+__unknown_file (9
+7
+%01com.example.taxemanagement.service.TaxeTNBService*9
+
+__unknown_file (
+
+	terrainIdjava.lang.Long2.getHistoricalTaxesForTerrain(Ljava/lang/Long;)""
+ (F
+
+%1java.util.List:'
+6 (R
+	terrainIdjava.lang.LongB;9
+7com.example.taxemanagement.controller.TaxeTNBControllerH

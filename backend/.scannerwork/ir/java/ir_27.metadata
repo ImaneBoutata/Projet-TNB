@@ -1,0 +1,3 @@
+com.example.terrainmanagement.controller.TerrainController#getTerrainById(Ljava/lang/Long;)Lcom/example/terrainmanagement/entity/Terrain;
+==
+getTerrainById com.example.terrainmanagement.service.TerrainService#getTerrainById(Ljava/lang/Long;)Lcom/example/terrainmanagement/entity/Terrain;

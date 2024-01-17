@@ -1,0 +1,3 @@
+com.bezkoder.springjwt.controllers.AuthController#findByCin(Ljava/lang/String;)Lcom/bezkoder/springjwt/models/User;
+==
+findByCin com.bezkoder.springjwt.repository.UserRepository#findByCin(Ljava/lang/String;)Lcom/bezkoder/springjwt/models/User;

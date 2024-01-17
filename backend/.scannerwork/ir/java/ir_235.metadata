@@ -1,0 +1,13 @@
+com.bezkoder.springjwt.security.services.UserDetailsImpl#build(Lcom/bezkoder/springjwt/models/User;)Lcom/bezkoder/springjwt/security/services/UserDetailsImpl;
+java.util.stream.Collectors#toList()Ljava/util/stream/Collector;
+com.bezkoder.springjwt.security.services.UserDetailsImpl#<init>(Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Collection;Ljava/lang/String;)V
+com.bezkoder.springjwt.security.services.UserDetailsImpl#instance-init#
+==
+getUsername com.bezkoder.springjwt.models.User#getUsername()Ljava/lang/String;
+stream java.util.Collection#stream()Ljava/util/stream/Stream;
+map java.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+getCin com.bezkoder.springjwt.models.User#getCin()Ljava/lang/String;
+getPassword com.bezkoder.springjwt.models.User#getPassword()Ljava/lang/String;
+getId com.bezkoder.springjwt.models.User#getId()Ljava/lang/Long;
+getEmail com.bezkoder.springjwt.models.User#getEmail()Ljava/lang/String;
+getRoles com.bezkoder.springjwt.models.User#getRoles()Ljava/util/Set;

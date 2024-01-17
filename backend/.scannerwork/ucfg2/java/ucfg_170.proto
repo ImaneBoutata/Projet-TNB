@@ -1,0 +1,63 @@
+
+rcom.example.terrainmanagement.controller.CategorieController#getCategoryById(Ljava/lang/Long;)Ljava/util/Optional;õ
+ê/C:/Users/ATLAS PRO ELECTRO/Projet-TNB/backend/TerrainManagement/src/main/java/com/example/terrainmanagement/controller/CategorieController.java! !(."startingBlock*õ
+startingBlock!. !(E~
+|
+   (
+%2"
+__annotate**
+
+__unknown_file (
+
+GetMapping*2
+
+__unknown_file (
+
+idjava.lang.LongÄ
+~
+!/ !(<
+%3"
+__annotate*,
+
+__unknown_file (
+PathVariable*2
+
+__unknown_file (
+
+idjava.lang.Longx
+v
+!B !(D
+idjava.lang.Long"__annotation*"
+
+__unknown_file (
+
+%2*"
+
+__unknown_file (
+
+%3*
+1*∫
+1" "(≈
+¬
+" "(<
+%06com.example.terrainmanagement.service.CategorieService"__id*r
+
+__unknown_file (V*T>
+<com.example.terrainmanagement.controller.CategorieController"
+categorieService∫∑
+" "(,
+%1java.util.Optional"ecom.example.terrainmanagement.service.CategorieService#findById(Ljava/lang/Long;)Ljava/util/Optional;*Z
+
+__unknown_file (>
+<
+%06com.example.terrainmanagement.service.CategorieService*2
+
+__unknown_file (
+
+idjava.lang.Long2findById(Ljava/lang/Long;)"&
+" "(-
+
+%1java.util.Optional: 
+!/ !(D
+idjava.lang.LongB@>
+<com.example.terrainmanagement.controller.CategorieControllerH

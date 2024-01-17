@@ -1,0 +1,15 @@
+
+Mcom.bezkoder.springjwt.payload.request.SignupRequest#getRole()Ljava/util/Set;•
+Š/C:/Users/ATLAS PRO ELECTRO/Projet-TNB/backend/RedevableManagement/src/main/java/com/bezkoder/springjwt/payload/request/SignupRequest.java_ _("1*»
+1` `(ˆ
+…
+` `(
+%0java.util.Set"__id*^
+
+__unknown_file (B*@6
+4com.bezkoder.springjwt.payload.request.SignupRequest"
+role"!
+` `(
+
+%0java.util.SetB86
+4com.bezkoder.springjwt.payload.request.SignupRequestH

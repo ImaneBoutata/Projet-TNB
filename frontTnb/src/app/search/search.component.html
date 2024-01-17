@@ -1,0 +1,33 @@
+<!-- historique-taxes.component.html -->
+<div>
+  <form [formGroup]="searchForm">
+    <label for="selectedUser">Select User:</label>
+    <select id="selectedUser" formControlName="selectedUser">
+      <option *ngFor="let user of users" [value]="user.id">{{ user.cin }}</option>
+    </select>
+     <!-- Add a button to trigger the tax information retrieval -->
+     <button (click)="onLoadTaxeTNB()">Load TaxeTNB</button>
+  </form>
+</div>
+
+<div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Montant</th>
+        <th>Surface</th>
+        <!-- Add other tax-related columns as needed -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tax of taxeTNBList">
+        <td>{{ tax.annee }}</td>
+        <td>{{ tax.montantPaye }}</td>
+        <td>{{ tax.surface }}</td>
+        <!-- Add other tax-related columns as needed -->
+      </tr>
+    </tbody>
+  </table>
+</div>

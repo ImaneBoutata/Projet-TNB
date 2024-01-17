@@ -49,6 +49,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     ParameterizedTypeReference<List<TaxeTNB>> responseType = new ParameterizedTypeReference<List<TaxeTNB>>() {};
     List<TaxeTNB> taxesList = new ArrayList<>();
     for(Terrain t: redevable.getTerrains()){
+      System.out.println("ooookkk"+t);
       String apiUrl="http://localhost:8888/TAXE-SERVICE/taxe-tnb/"+t.getTerrainID()+"/history";
       ResponseEntity<List<TaxeTNB>> responseEntity = restTemplate.exchange(apiUrl, HttpMethod.GET, null, responseType);
       System.out.println("les liiiiiiiistes !!!!!!  "+ responseEntity.getBody());

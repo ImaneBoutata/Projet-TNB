@@ -1,0 +1,68 @@
+
+_com.example.terrainmanagement.controller.TerrainController#isTaxPaidForYear(Ljava/lang/Long;I)Z™
+Ž/C:/Users/ATLAS PRO ELECTRO/Projet-TNB/backend/TerrainManagement/src/main/java/com/example/terrainmanagement/controller/TerrainController.java. .(#"startingBlock*³
+startingBlock.# .(Y†
+ƒ
+- -(+
+%2"
+__annotate**
+
+__unknown_file (
+
+GetMapping*9
+
+__unknown_file (
+
+	terrainIdjava.lang.Longˆ
+…
+.$ .(1
+%3"
+__annotate*,
+
+__unknown_file (
+PathVariable*9
+
+__unknown_file (
+
+	terrainIdjava.lang.Long
+}
+.7 .(@
+	terrainIdjava.lang.Long"__annotation*"
+
+__unknown_file (
+
+%2*"
+
+__unknown_file (
+
+%3*
+1*»
+1/ /(¿
+¼
+/ /(:
+%04com.example.terrainmanagement.service.TerrainService"__id*n
+
+__unknown_file (R*P<
+:com.example.terrainmanagement.controller.TerrainController"
+terrainServiceÕÒ
+/ /(?
+%1boolean"Ycom.example.terrainmanagement.service.TerrainService#isTaxPaidForYear(Ljava/lang/Long;I)Z*X
+
+__unknown_file (<
+:
+%04com.example.terrainmanagement.service.TerrainService*9
+
+__unknown_file (
+
+	terrainIdjava.lang.Long*"
+
+__unknown_file (
+""2#isTaxPaidForYear(Ljava/lang/Long;I)"
+/ /(@
+"":'
+.$ .(A
+	terrainIdjava.lang.Long: 
+
+__unknown_file (
+""B><
+:com.example.terrainmanagement.controller.TerrainControllerHX

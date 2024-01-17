@@ -1,0 +1,3 @@
+com.example.terrainmanagement.service.CategorieService#findByNomCategorie(Ljava/lang/String;)Lcom/example/terrainmanagement/entity/Categorie;
+==
+findByNomCategorie com.example.terrainmanagement.repository.CategorieRepository#findByNomCategorie(Ljava/lang/String;)Lcom/example/terrainmanagement/entity/Categorie;

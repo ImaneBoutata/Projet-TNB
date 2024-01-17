@@ -1,0 +1,7 @@
+organization=oumaimaelmardi
+projectKey=oumaimaelmardi_projettnb
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.52029
+dashboardUrl=https://sonarcloud.io/dashboard?id=oumaimaelmardi_projettnb
+ceTaskId=AY0XX3KU3lLWa40Mak-q
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AY0XX3KU3lLWa40Mak-q

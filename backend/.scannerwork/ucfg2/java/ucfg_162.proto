@@ -1,0 +1,15 @@
+
+Qcom.bezkoder.springjwt.payload.request.SignupRequest#getEmail()Ljava/lang/String;•
+Š/C:/Users/ATLAS PRO ELECTRO/Projet-TNB/backend/RedevableManagement/src/main/java/com/bezkoder/springjwt/payload/request/SignupRequest.javaO O("1*Â
+1P P(Œ
+‰
+P P(
+%0java.lang.String"__id*_
+
+__unknown_file (C*A6
+4com.bezkoder.springjwt.payload.request.SignupRequest"
+email"$
+P P(
+
+%0java.lang.StringB86
+4com.bezkoder.springjwt.payload.request.SignupRequestH

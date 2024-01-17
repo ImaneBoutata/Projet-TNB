@@ -1,0 +1,4 @@
+com.bezkoder.springjwt.security.WebSecurityConfig#authenticationProvider()LDaoAuthenticationProvider;
+null
+==
+passwordEncoder com.bezkoder.springjwt.security.WebSecurityConfig#passwordEncoder()LPasswordEncoder;

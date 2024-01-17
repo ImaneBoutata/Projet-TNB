@@ -19,6 +19,7 @@ import { TerrainComponent } from './terrain/terrain.component';
 import { TaxeTnbComponent } from './taxe-tnb/taxe-tnb.component';
 import { TaxeTnbListComponent } from './taxe-tnb-list/taxe-tnb-list.component';
 import { RedevableComponent } from './redevable/redevable.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { RedevableComponent } from './redevable/redevable.component';
     TerrainComponent,
     TaxeTnbComponent,
     TaxeTnbListComponent,
-    RedevableComponent
+    RedevableComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

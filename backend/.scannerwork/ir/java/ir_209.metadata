@@ -1,0 +1,4 @@
+com.example.terrainmanagement.service.TerrainService#calculateTax(Ljava/lang/Long;)D
+java.util.Optional#get()Ljava/lang/Object;
+==
+findByNomCategorie com.example.terrainmanagement.service.CategorieService#findByNomCategorie(Ljava/lang/String;)Lcom/example/terrainmanagement/entity/Categorie;

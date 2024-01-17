@@ -1,0 +1,4 @@
+com.bezkoder.springjwt.security.services.UserDetailsServiceImpl#findTerrainsByCIN(Ljava/lang/String;)Ljava/util/List;
+==
+findByCin com.bezkoder.springjwt.repository.UserRepository#findByCin(Ljava/lang/String;)Lcom/bezkoder/springjwt/models/User;
+getTerrains com.bezkoder.springjwt.models.User#getTerrains()Ljava/util/List;

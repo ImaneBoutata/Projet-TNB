@@ -1,0 +1,3 @@
+com.bezkoder.springjwt.controllers.AuthController#findTerrainsByCIN(Ljava/lang/String;)Ljava/util/List;
+==
+findTerrainsByCIN com.bezkoder.springjwt.security.services.UserDetailsServiceImpl#findTerrainsByCIN(Ljava/lang/String;)Ljava/util/List;

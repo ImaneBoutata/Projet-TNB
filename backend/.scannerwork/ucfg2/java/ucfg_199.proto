@@ -1,0 +1,62 @@
+
+ócom.example.taxemanagement.controller.TaxeTNBController#saveTax(Lcom/example/taxemanagement/entity/TaxeTNB;)Lcom/example/taxemanagement/entity/TaxeTNB;ì
+à/C:/Users/ATLAS PRO ELECTRO/Projet-TNB/backend/TaxeManagement/src/main/java/com/example/taxemanagement/controller/TaxeTNBController.java ("startingBlock*Ä
+startingBlock (8†
+ù
+ (
+%2"
+__annotate*+
+
+__unknown_file (
+PostMapping*R
+
+__unknown_file (6
+4
+taxeTNB)com.example.taxemanagement.entity.TaxeTNB†
+ù
+ ('
+%3"
+__annotate*+
+
+__unknown_file (
+RequestBody*R
+
+__unknown_file (6
+4
+taxeTNB)com.example.taxemanagement.entity.TaxeTNBô
+ñ
+0 (74
+taxeTNB)com.example.taxemanagement.entity.TaxeTNB"__annotation*"
+
+__unknown_file (
+
+%2*"
+
+__unknown_file (
+
+%3*
+1*æ
+1 (π
+∂
+ (7
+%01com.example.taxemanagement.service.TaxeTNBService"__id*k
+
+__unknown_file (O*M9
+7com.example.taxemanagement.controller.TaxeTNBController"
+taxeTNBService≥∞
+ (./
+%1)com.example.taxemanagement.entity.TaxeTNB"ëcom.example.taxemanagement.service.TaxeTNBService#saveTax(Lcom/example/taxemanagement/entity/TaxeTNB;)Lcom/example/taxemanagement/entity/TaxeTNB;*U
+
+__unknown_file (9
+7
+%01com.example.taxemanagement.service.TaxeTNBService*R
+
+__unknown_file (6
+4
+taxeTNB)com.example.taxemanagement.entity.TaxeTNB24saveTax(Lcom/example/taxemanagement/entity/TaxeTNB;)"=
+ (/1
+/
+%1)com.example.taxemanagement.entity.TaxeTNB:@
+ (74
+taxeTNB)com.example.taxemanagement.entity.TaxeTNBB;9
+7com.example.taxemanagement.controller.TaxeTNBControllerH

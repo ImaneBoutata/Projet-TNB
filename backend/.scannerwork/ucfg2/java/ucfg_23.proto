@@ -1,0 +1,16 @@
+
+ecom.example.terrainmanagement.service.CategorieService#findById(Ljava/lang/Long;)Ljava/util/Optional;•
+Š/C:/Users/ATLAS PRO ELECTRO/Projet-TNB/backend/TerrainManagement/src/main/java/com/example/terrainmanagement/service/CategorieService.java ('"1*ì
+1 ("È
+Å
+ ("B
+%0<com.example.terrainmanagement.repository.CategorieRepository"__id*o
+
+__unknown_file (S*Q8
+6com.example.terrainmanagement.service.CategorieService"
+categorieRepository"
+ (3
+"":#
+( (2
+aLongjava.lang.LongB:8
+6com.example.terrainmanagement.service.CategorieServiceH

@@ -1,0 +1,23 @@
+com.bezkoder.springjwt.controllers.AuthController#registerUser(Lcom/bezkoder/springjwt/payload/request/SignupRequest;)LResponseEntity;
+com.bezkoder.springjwt.models.User#instance-init#
+com.bezkoder.springjwt.models.User#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+java.util.HashSet#<init>()V
+java.util.Optional#orElseThrow(Ljava/util/function/Supplier;)Ljava/lang/Object;
+java.util.HashSet#instance-init#
+com.bezkoder.springjwt.payload.response.MessageResponse#instance-init#
+com.bezkoder.springjwt.payload.response.MessageResponse#<init>(Ljava/lang/String;)V
+==
+getPassword com.bezkoder.springjwt.payload.request.SignupRequest#getPassword()Ljava/lang/String;
+add java.util.Set#add(Ljava/lang/Object;)Z
+getEmail com.bezkoder.springjwt.payload.request.SignupRequest#getEmail()Ljava/lang/String;
+getPrenom com.bezkoder.springjwt.payload.request.SignupRequest#getPrenom()Ljava/lang/String;
+getCin com.bezkoder.springjwt.payload.request.SignupRequest#getCin()Ljava/lang/String;
+forEach java.lang.Iterable#forEach(Ljava/util/function/Consumer;)V
+existsByUsername com.bezkoder.springjwt.repository.UserRepository#existsByUsername(Ljava/lang/String;)Ljava/lang/Boolean;
+existsByEmail com.bezkoder.springjwt.repository.UserRepository#existsByEmail(Ljava/lang/String;)Ljava/lang/Boolean;
+getAdresse com.bezkoder.springjwt.payload.request.SignupRequest#getAdresse()Ljava/lang/String;
+setRoles com.bezkoder.springjwt.models.User#setRoles(Ljava/util/Set;)V
+getNom com.bezkoder.springjwt.payload.request.SignupRequest#getNom()Ljava/lang/String;
+getUsername com.bezkoder.springjwt.payload.request.SignupRequest#getUsername()Ljava/lang/String;
+findByName com.bezkoder.springjwt.repository.RoleRepository#findByName(Lcom/bezkoder/springjwt/models/ERole;)Ljava/util/Optional;
+getRole com.bezkoder.springjwt.payload.request.SignupRequest#getRole()Ljava/util/Set;

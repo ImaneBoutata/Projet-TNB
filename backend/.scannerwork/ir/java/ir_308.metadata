@@ -1,0 +1,3 @@
+com.example.taxemanagement.controller.TaxeTNBController#getHistoricalTaxesForTerrain(Ljava/lang/Long;)Ljava/util/List;
+==
+getHistoricalTaxesForTerrain com.example.taxemanagement.service.TaxeTNBService#getHistoricalTaxesForTerrain(Ljava/lang/Long;)Ljava/util/List;

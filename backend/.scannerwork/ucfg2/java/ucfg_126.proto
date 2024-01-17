@@ -1,0 +1,64 @@
+
+Ycom.example.terrainmanagement.service.TerrainService#isTaxPaidForYear(Ljava/lang/Long;I)Zì
+à/C:/Users/ATLAS PRO ELECTRO/Projet-TNB/backend/TerrainManagement/src/main/java/com/example/terrainmanagement/service/TerrainService.javaH H(#"3*!
+2Q' Q(,"
+Q  Q(-
+""*ª
+3J J(+¬
+ø
+J J(+@
+%0:com.example.terrainmanagement.repository.TerrainRepository"__id*k
+
+__unknown_file (O*M6
+4com.example.terrainmanagement.service.TerrainService"
+terrainRepositoryç
+ä
+K K(l
+%1"__declareFunction*e
+
+__unknown_file (IG
+E__sonar_lambda_1$com.example.terrainmanagement.service.TerrainServiceo
+m
+J K(n7
+terrain,com.example.terrainmanagement.entity.Terrain"__id*"
+
+__unknown_file (
+""ù
+ö
+M M(g
+apiUrljava.lang.String"__id*l
+
+__unknown_file (PN
+Lhttp://localhost:8888/TAXE-MANAGEMENT/taxe-tnb/findByTerrainAndAnnee/{annee}r
+p
+O O(]:
+
+taxRecords,com.example.terrainmanagement.entity.TaxeTNB"__id*"
+
+__unknown_file (
+""…
+∆
+Q Q(
+%2boolean"	__compare*"
+
+__unknown_file (
+==*X
+
+__unknown_file (<
+:
+
+taxRecords,com.example.terrainmanagement.entity.TaxeTNB*"
+
+__unknown_file (
+""*
+2
+1*!
+1Q< Q(@"
+Q5 Q(A
+"":'
+H$ H(3
+	terrainIdjava.lang.Long: 
+
+__unknown_file (
+""B86
+4com.example.terrainmanagement.service.TerrainServiceHX

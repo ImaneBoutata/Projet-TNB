@@ -1,0 +1,3 @@
+com.example.terrainmanagement.controller.CategorieController#getAllCategories()Ljava/util/List;
+==
+getAllCategories com.example.terrainmanagement.service.CategorieService#getAllCategories()Ljava/util/List;

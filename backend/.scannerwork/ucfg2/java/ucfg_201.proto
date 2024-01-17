@@ -1,0 +1,69 @@
+
+¦com.example.taxemanagement.controller.TaxeTNBController#findByTerrainAndAnnee(Lcom/example/taxemanagement/entity/Terrain;I)Lcom/example/taxemanagement/entity/TaxeTNB;“
+ˆ/C:/Users/ATLAS PRO ELECTRO/Projet-TNB/backend/TaxeManagement/src/main/java/com/example/taxemanagement/controller/TaxeTNBController.java# #(("startingBlock*ÿ
+startingBlock#( #(_Ÿ
+œ
+" "(0
+%2"
+__annotate**
+
+__unknown_file (
+
+GetMapping*R
+
+__unknown_file (6
+4
+terrain)com.example.taxemanagement.entity.Terrain 
+
+#) #(5
+%3"
+__annotate*+
+
+__unknown_file (
+RequestBody*R
+
+__unknown_file (6
+4
+terrain)com.example.taxemanagement.entity.Terrain™
+–
+#> #(E4
+terrain)com.example.taxemanagement.entity.Terrain"__annotation*"
+
+__unknown_file (
+
+%2*"
+
+__unknown_file (
+
+%3*
+1*€
+1$ $(¹
+¶
+$ $(7
+%01com.example.taxemanagement.service.TaxeTNBService"__id*k
+
+__unknown_file (O*M9
+7com.example.taxemanagement.controller.TaxeTNBController"
+taxeTNBServiceõò
+$ $(C/
+%1)com.example.taxemanagement.entity.TaxeTNB" com.example.taxemanagement.service.TaxeTNBService#findByTerrainAndAnnee(Lcom/example/taxemanagement/entity/Terrain;I)Lcom/example/taxemanagement/entity/TaxeTNB;*U
+
+__unknown_file (9
+7
+%01com.example.taxemanagement.service.TaxeTNBService*R
+
+__unknown_file (6
+4
+terrain)com.example.taxemanagement.entity.Terrain*"
+
+__unknown_file (
+""2CfindByTerrainAndAnnee(Lcom/example/taxemanagement/entity/Terrain;I)"=
+$ $(D1
+/
+%1)com.example.taxemanagement.entity.TaxeTNB:@
+#) #(F4
+terrain)com.example.taxemanagement.entity.Terrain: 
+
+__unknown_file (
+""B;9
+7com.example.taxemanagement.controller.TaxeTNBControllerH

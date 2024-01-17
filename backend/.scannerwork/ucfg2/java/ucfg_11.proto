@@ -1,0 +1,21 @@
+
+[com.example.terrainmanagement.controller.TerrainController#getAllTerrains()Ljava/util/List;™
+Ž/C:/Users/ATLAS PRO ELECTRO/Projet-TNB/backend/TerrainManagement/src/main/java/com/example/terrainmanagement/controller/TerrainController.java ('"1*Ü
+1 (¿
+¼
+ (:
+%04com.example.terrainmanagement.service.TerrainService"__id*n
+
+__unknown_file (R*P<
+:com.example.terrainmanagement.controller.TerrainController"
+terrainServiceæã
+ (.
+%1java.util.List"Ucom.example.terrainmanagement.service.TerrainService#getAllTerrains()Ljava/util/List;*X
+
+__unknown_file (<
+:
+%04com.example.terrainmanagement.service.TerrainService2getAllTerrains()""
+ (/
+
+%1java.util.ListB><
+:com.example.terrainmanagement.controller.TerrainControllerH

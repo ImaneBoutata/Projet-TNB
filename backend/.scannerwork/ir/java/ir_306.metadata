@@ -1,0 +1,3 @@
+com.example.taxemanagement.controller.TaxeTNBController#getAllTaxes()Ljava/util/List;
+==
+getAllTaxes com.example.taxemanagement.service.TaxeTNBService#getAllTaxes()Ljava/util/List;

@@ -1,0 +1,3 @@
+com.example.terrainmanagement.controller.CategorieController#saveCategory(Lcom/example/terrainmanagement/entity/Categorie;)Ljava/lang/String;
+==
+saveCategory com.example.terrainmanagement.service.CategorieService#saveCategory(Lcom/example/terrainmanagement/entity/Categorie;)Ljava/lang/String;

@@ -1,0 +1,3 @@
+com.example.terrainmanagement.controller.CategorieController#getCategoryById(Ljava/lang/Long;)Ljava/util/Optional;
+==
+findById com.example.terrainmanagement.service.CategorieService#findById(Ljava/lang/Long;)Ljava/util/Optional;

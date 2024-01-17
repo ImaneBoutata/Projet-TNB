@@ -55,9 +55,7 @@ export class AuthService {
     );
   }
 
-  findHistoriqueByCIN(cin: string): Observable<TaxeTNB[]> {
-    return this.http.get<TaxeTNB[]>(AUTH_API+`/findHistoriqueByCIN/${cin}`);
-  }
+ 
 
   findAllTaxes(): Observable<TaxeTNB[]> {
       return this.http.get<TaxeTNB[]>(taxeUrl+"/all");
@@ -74,7 +72,11 @@ export class AuthService {
       })
     );
   }
+ 
 
+  findHistoriqueByCIN(cin: string): Observable<TaxeTNB[]> {
+    return this.http.get<TaxeTNB[]>(`${AUTH_API}/findHistoriqueByCIN/${cin}`);
+  }
 
   createTerrain(terrain: Terrain): Observable<Terrain> {
     return this.http.post<Terrain>(apiUrl + '/save', terrain);

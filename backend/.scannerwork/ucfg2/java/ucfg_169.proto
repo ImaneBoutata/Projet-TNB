@@ -1,0 +1,62 @@
+
+com.example.terrainmanagement.controller.CategorieController#saveCategory(Lcom/example/terrainmanagement/entity/Categorie;)Ljava/lang/String;›
+/C:/Users/ATLAS PRO ELECTRO/Projet-TNB/backend/TerrainManagement/src/main/java/com/example/terrainmanagement/controller/CategorieController.java ("startingBlock*ª
+startingBlock (G®
+«
+ (
+%2"
+__annotate*+
+
+__unknown_file (
+PostMapping*`
+
+__unknown_file (D
+B
+categorieTerrain.com.example.terrainmanagement.entity.Categorie®
+«
+ (+
+%3"
+__annotate*+
+
+__unknown_file (
+RequestBody*`
+
+__unknown_file (D
+B
+categorieTerrain.com.example.terrainmanagement.entity.Categorie§
+¤
+6 (FB
+categorieTerrain.com.example.terrainmanagement.entity.Categorie"__annotation*"
+
+__unknown_file (
+
+%2*"
+
+__unknown_file (
+
+%3*
+1*«
+1 (Å
+Â
+ (<
+%06com.example.terrainmanagement.service.CategorieService"__id*r
+
+__unknown_file (V*T>
+<com.example.terrainmanagement.controller.CategorieController"
+categorieService­ª
+ (>
+%1java.lang.String"‡com.example.terrainmanagement.service.CategorieService#saveCategory(Lcom/example/terrainmanagement/entity/Categorie;)Ljava/lang/String;*Z
+
+__unknown_file (>
+<
+%06com.example.terrainmanagement.service.CategorieService*`
+
+__unknown_file (D
+B
+categorieTerrain.com.example.terrainmanagement.entity.Categorie2>saveCategory(Lcom/example/terrainmanagement/entity/Categorie;)"$
+ (?
+
+%1java.lang.String:N
+ (FB
+categorieTerrain.com.example.terrainmanagement.entity.CategorieB@>
+<com.example.terrainmanagement.controller.CategorieControllerH

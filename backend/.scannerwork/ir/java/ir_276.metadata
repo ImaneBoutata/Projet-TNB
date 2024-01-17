@@ -1,0 +1,3 @@
+com.bezkoder.springjwt.controllers.AuthController#findHistoriqueByCIN(Ljava/lang/String;)Ljava/util/List;
+==
+findHistoriqueByCIN com.bezkoder.springjwt.security.services.UserDetailsServiceImpl#findHistoriqueByCIN(Ljava/lang/String;)Ljava/util/List;

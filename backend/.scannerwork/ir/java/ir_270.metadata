@@ -1,0 +1,3 @@
+com.example.terrainmanagement.controller.CategorieController#getTauxByCategorieName(Ljava/lang/String;)D
+==
+getTauxByCategorieName com.example.terrainmanagement.service.CategorieService#getTauxByCategorieName(Ljava/lang/String;)D

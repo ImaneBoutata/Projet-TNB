@@ -1,0 +1,3 @@
+com.example.terrainmanagement.controller.TerrainController#update(Lcom/example/terrainmanagement/entity/Terrain;)I
+==
+update com.example.terrainmanagement.service.TerrainService#update(Lcom/example/terrainmanagement/entity/Terrain;)I

@@ -1,0 +1,3 @@
+com.example.terrainmanagement.controller.TerrainController#deleteById(Ljava/lang/Long;)V
+==
+deleteById com.example.terrainmanagement.service.TerrainService#deleteById(Ljava/lang/Long;)V

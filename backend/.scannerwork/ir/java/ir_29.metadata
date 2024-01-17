@@ -1,0 +1,3 @@
+com.example.terrainmanagement.controller.TerrainController#isTaxPaidForYear(Ljava/lang/Long;I)Z
+==
+isTaxPaidForYear com.example.terrainmanagement.service.TerrainService#isTaxPaidForYear(Ljava/lang/Long;I)Z

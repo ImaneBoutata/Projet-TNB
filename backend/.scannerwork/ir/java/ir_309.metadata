@@ -1,0 +1,3 @@
+com.example.taxemanagement.controller.TaxeTNBController#findByTerrainAndAnnee(Lcom/example/taxemanagement/entity/Terrain;I)Lcom/example/taxemanagement/entity/TaxeTNB;
+==
+findByTerrainAndAnnee com.example.taxemanagement.service.TaxeTNBService#findByTerrainAndAnnee(Lcom/example/taxemanagement/entity/Terrain;I)Lcom/example/taxemanagement/entity/TaxeTNB;

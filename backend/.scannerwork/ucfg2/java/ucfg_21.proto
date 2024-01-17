@@ -1,0 +1,21 @@
+
+Ycom.example.terrainmanagement.service.CategorieService#getAllCategories()Ljava/util/List;•
+Š/C:/Users/ATLAS PRO ELECTRO/Projet-TNB/backend/TerrainManagement/src/main/java/com/example/terrainmanagement/service/CategorieService.java (+"1*ç
+1 ("È
+Å
+ ("B
+%0<com.example.terrainmanagement.repository.CategorieRepository"__id*o
+
+__unknown_file (S*Q8
+6com.example.terrainmanagement.service.CategorieService"
+categorieRepositoryèå
+ (,
+%1java.util.List"Vcom.example.terrainmanagement.repository.CategorieRepository#findAll()Ljava/util/List;*`
+
+__unknown_file (D
+B
+%0<com.example.terrainmanagement.repository.CategorieRepository2	findAll()""
+ (-
+
+%1java.util.ListB:8
+6com.example.terrainmanagement.service.CategorieServiceH
