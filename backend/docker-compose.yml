@@ -21,6 +21,10 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/taxe?createDatabaseIfNotExist=true&characterEncoding=utf-8
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
+      eureka:
+        client:
+          serviceUrl:
+            defaultZone: http://eurekaproject:8761/eureka/
     networks:
       - mynetwork
 
@@ -37,6 +41,10 @@ services:
       SPRING_DATASOURCE_PASSWORD: root
       BEZKODER_APP_JWTSECRET: bezKoderSecretKey
       BEZKODER_APP_JWTEXPIRATIONMS: 86400000
+      eureka:
+        client:
+          serviceUrl:
+            defaultZone: http://eurekaproject:8761/eureka/
     networks:
       - mynetwork
 
@@ -51,6 +59,10 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/taxe?createDatabaseIfNotExist=true&characterEncoding=utf-8
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
+      eureka:
+        client:
+          serviceUrl:
+            defaultZone: http://eurekaproject:8761/eureka/
     networks:
       - mynetwork
 
@@ -65,6 +77,10 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/taxe?createDatabaseIfNotExist=true&characterEncoding=utf-8
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
+      eureka:
+        client:
+          serviceUrl:
+            defaultZone: http://eurekaproject:8761/eureka/
     networks:
       - mynetwork
 
