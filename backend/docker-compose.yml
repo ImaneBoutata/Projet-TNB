@@ -2,14 +2,14 @@ version: '3.8'
 
 services:
 
-  eurekaproject:
+  eureka-server:
     build:
-      context: ./eurekaproject
+      context: ./eureka-server
     ports:
       - "8761:8761"
 
 
-  TerrainManagement:
+  terrainmanagement:
     build: C:\Users\hp\Desktop\achbaro\Projet-TNB\backend\TerrainManagement
     ports:
       - "8084:8084"
@@ -21,7 +21,7 @@ services:
       - "8094:8094"
 
 
-  TAXEMANAGEMENT:
+  taxemanagement:
     build: C:\Users\hp\Desktop\achbaro\Projet-TNB\backend\TaxeManagement
     ports:
       - "8085:8085"
